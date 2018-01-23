@@ -28,6 +28,9 @@ ExportedObj/
 sysinfo.txt
 
 # Builds
+*.exe
 *.apk
 *.unitypackage
 
+/*.exe
+/HomeVR.exe
