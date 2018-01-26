@@ -3,7 +3,7 @@ A simple Unity VR scene representing my real house. It can be run either with Go
 
 The idea is to include the rest of the furniture and other missing elements trying to represent them with as high fidelity as possible but as I guess I won't be modeling any custom 3D models I'll have to search for similar assets in the stores. The vast of the actual assets were taken from the [Simple Home Stuff](https://www.assetstore.unity3d.com/en/#!/content/69129) free asset as well as a few additional free doors pulled from Turbosquid. Beyond those, there are a few objects I've done myself using simple Unity primitives (mainly cubes and cylinders) such as the rounded table at the left of the room, the moving ceiling fan hanging from the center of the living room, and the TV display where I projected some video later.
 
-   <img src="https://user-images.githubusercontent.com/5633645/35434575-6ba491d4-0266-11e8-8a86-1daa752a1b7a.png" alt="home_1" style="max-width:100%" width="512" heigth="512">
+   <img src="https://user-images.githubusercontent.com/5633645/35434575-6ba491d4-0266-11e8-8a86-1daa752a1b7a.png" alt="home_1" style="max-width:100%" width="1048" heigth="664">
    
    <img src="https://user-images.githubusercontent.com/5633645/35434576-6bca27dc-0266-11e8-8556-831294d19b0d.png" alt="home_2" style="max-width:100%" width="512" heigth="512">
 
