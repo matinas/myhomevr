@@ -7,21 +7,21 @@ Direct3D:
     VRAM:     3072 MB
     Driver:   23.21.13.8813
 Begin MonoManager ReloadAssembly
-Platform assembly: D:\Users\Public\Documents\Unity Projects\3DModelsForVRCourse\HomeVR_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading D:\Users\Public\Documents\Unity Projects\3DModelsForVRCourse\HomeVR_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: D:\Users\Public\Documents\Unity Projects\3DModelsForVRCourse\HomeVR_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading D:\Users\Public\Documents\Unity Projects\3DModelsForVRCourse\HomeVR_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: D:\Users\Public\Documents\Unity Projects\3DModelsForVRCourse\HomeVR_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading D:\Users\Public\Documents\Unity Projects\3DModelsForVRCourse\HomeVR_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-Platform assembly: D:\Users\Public\Documents\Unity Projects\3DModelsForVRCourse\HomeVR_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
-Loading D:\Users\Public\Documents\Unity Projects\3DModelsForVRCourse\HomeVR_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-Platform assembly: D:\Users\Public\Documents\Unity Projects\3DModelsForVRCourse\HomeVR_Data\Managed\UnityEngine.VR.dll (this message is harmless)
-Loading D:\Users\Public\Documents\Unity Projects\3DModelsForVRCourse\HomeVR_Data\Managed\UnityEngine.VR.dll into Unity Child Domain
-Platform assembly: D:\Users\Public\Documents\Unity Projects\3DModelsForVRCourse\HomeVR_Data\Managed\Google.ProtocolBuffers.dll (this message is harmless)
-Loading D:\Users\Public\Documents\Unity Projects\3DModelsForVRCourse\HomeVR_Data\Managed\Google.ProtocolBuffers.dll into Unity Child Domain
-- Completed reload, in  0.119 seconds
-Platform assembly: D:\Users\Public\Documents\Unity Projects\3DModelsForVRCourse\HomeVR_Data\Managed\System.Core.dll (this message is harmless)
-Platform assembly: D:\Users\Public\Documents\Unity Projects\3DModelsForVRCourse\HomeVR_Data\Managed\System.dll (this message is harmless)
+Platform assembly: D:\Users\Public\Documents\Unity Projects\myhomevr\HomeVR_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading D:\Users\Public\Documents\Unity Projects\myhomevr\HomeVR_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: D:\Users\Public\Documents\Unity Projects\myhomevr\HomeVR_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading D:\Users\Public\Documents\Unity Projects\myhomevr\HomeVR_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: D:\Users\Public\Documents\Unity Projects\myhomevr\HomeVR_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading D:\Users\Public\Documents\Unity Projects\myhomevr\HomeVR_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: D:\Users\Public\Documents\Unity Projects\myhomevr\HomeVR_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading D:\Users\Public\Documents\Unity Projects\myhomevr\HomeVR_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: D:\Users\Public\Documents\Unity Projects\myhomevr\HomeVR_Data\Managed\UnityEngine.VR.dll (this message is harmless)
+Loading D:\Users\Public\Documents\Unity Projects\myhomevr\HomeVR_Data\Managed\UnityEngine.VR.dll into Unity Child Domain
+Platform assembly: D:\Users\Public\Documents\Unity Projects\myhomevr\HomeVR_Data\Managed\Google.ProtocolBuffers.dll (this message is harmless)
+Loading D:\Users\Public\Documents\Unity Projects\myhomevr\HomeVR_Data\Managed\Google.ProtocolBuffers.dll into Unity Child Domain
+- Completed reload, in  0.136 seconds
+Platform assembly: D:\Users\Public\Documents\Unity Projects\myhomevr\HomeVR_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: D:\Users\Public\Documents\Unity Projects\myhomevr\HomeVR_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
@@ -30,12 +30,12 @@ OpenVR initialized!
  
 (Filename:  Line: 424)
 
-UnloadTime: 0.654847 ms
+UnloadTime: 0.486399 ms
 Setting up 4 worker threads for Enlighten.
-  Thread -> id: 30e4 -> priority: 1 
-  Thread -> id: 30ec -> priority: 1 
-  Thread -> id: 30d8 -> priority: 1 
-  Thread -> id: 30f0 -> priority: 1 
+  Thread -> id: 2a50 -> priority: 1 
+  Thread -> id: 33d8 -> priority: 1 
+  Thread -> id: f18 -> priority: 1 
+  Thread -> id: 32b8 -> priority: 1 
 OpenVR Shutdown
  
 (Filename:  Line: 889)
