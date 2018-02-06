@@ -19,7 +19,7 @@ Platform assembly: D:\Users\Public\Documents\Unity Projects\myhomevr\HomeVR_Data
 Loading D:\Users\Public\Documents\Unity Projects\myhomevr\HomeVR_Data\Managed\UnityEngine.VR.dll into Unity Child Domain
 Platform assembly: D:\Users\Public\Documents\Unity Projects\myhomevr\HomeVR_Data\Managed\Google.ProtocolBuffers.dll (this message is harmless)
 Loading D:\Users\Public\Documents\Unity Projects\myhomevr\HomeVR_Data\Managed\Google.ProtocolBuffers.dll into Unity Child Domain
-- Completed reload, in  0.136 seconds
+- Completed reload, in  0.017 seconds
 Platform assembly: D:\Users\Public\Documents\Unity Projects\myhomevr\HomeVR_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: D:\Users\Public\Documents\Unity Projects\myhomevr\HomeVR_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
@@ -30,12 +30,12 @@ OpenVR initialized!
  
 (Filename:  Line: 424)
 
-UnloadTime: 0.486399 ms
+UnloadTime: 0.468735 ms
 Setting up 4 worker threads for Enlighten.
-  Thread -> id: 2a50 -> priority: 1 
-  Thread -> id: 33d8 -> priority: 1 
-  Thread -> id: f18 -> priority: 1 
-  Thread -> id: 32b8 -> priority: 1 
+  Thread -> id: 28cc -> priority: 1 
+  Thread -> id: 1d90 -> priority: 1 
+  Thread -> id: ccc -> priority: 1 
+  Thread -> id: 2c20 -> priority: 1 
 OpenVR Shutdown
  
 (Filename:  Line: 889)
