@@ -6,6 +6,8 @@ The idea is to include the rest of the furniture and other missing elements tryi
    <img src="https://user-images.githubusercontent.com/5633645/35434575-6ba491d4-0266-11e8-8a86-1daa752a1b7a.png" alt="home_1" style="max-width:100%" width="1048" heigth="664">
    
    <img src="https://user-images.githubusercontent.com/5633645/35434576-6bca27dc-0266-11e8-8556-831294d19b0d.png" alt="home_2" style="max-width:100%" width="512" heigth="512">
+   
+   <img src="https://user-images.githubusercontent.com/5633645/35844768-ec46c930-0aed-11e8-916e-480bc2837d5d.gif" alt="home_2" style="max-width:100%" width="512" heigth="512">
 
 **A bit more information**
 
