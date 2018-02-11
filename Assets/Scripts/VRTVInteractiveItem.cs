@@ -8,10 +8,12 @@ public class VRTVInteractiveItem : MonoBehaviour
 {
 	public VRActionTriggerer m_actionTriggerer;
 	private VideoPlayer player;
+	private AudioSource audio;
 
 	private void Awake()
 	{
 		player = GetComponent<VideoPlayer>();
+		audio = GetComponent<AudioSource>();
 	}
 
 	// Use this for initialization
@@ -32,12 +34,14 @@ public class VRTVInteractiveItem : MonoBehaviour
 			if (player.isPlaying)
 			{
 				player.Stop();
+				audio.Stop();
 				player.enabled = false;
 			}
 			else
 			{
 				player.enabled = true;
 				player.Play();
+				audio.Play();
 			}
 		}
 	}
