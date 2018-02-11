@@ -61,6 +61,13 @@ namespace VRStandardAssets.Utils
         }
 
 
+        public void Reset()
+        {
+            m_Selection.fillAmount = 0f;
+            m_Selection.gameObject.SetActive(true);
+            m_IsSelectionRadialActive = true;
+        }
+
         public void Show()
         {
             m_Selection.gameObject.SetActive(true);
@@ -110,6 +117,11 @@ namespace VRStandardAssets.Utils
             // If there is anything subscribed to OnSelectionComplete call it.
             if (OnSelectionComplete != null)
                 OnSelectionComplete();
+
+            if (!m_GazeBased)   // If the interaction is not fully gaze-based we reset the selection bar so we can use it again immediately
+                Reset();
+            else
+                Hide();         // If the interaction is fully gaze-based we hide the selection bar so it does not start filling again
         }
 
 
