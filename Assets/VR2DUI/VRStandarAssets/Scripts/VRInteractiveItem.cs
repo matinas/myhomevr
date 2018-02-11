@@ -15,9 +15,6 @@ namespace VRStandardAssets.Utils
         public event Action OnDoubleClick;              // Called when double click input is detected whilst the gaze is over this object.
         public event Action OnUp;                       // Called when Fire1 is released whilst the gaze is over this object.
         public event Action OnDown;                     // Called when Fire1 is pressed whilst the gaze is over this object.
-        public event Action<KeyCode> OnKeyPress;        // Called when Fire1 is pressed whilst the gaze is over this object.
-        public event Action<KeyCode> OnKeyRelease;       // Called when Fire1 is pressed whilst the gaze is over this object.
-        public event Action<KeyCode> OnKeyDoublePress;   // Called when Fire1 is pressed whilst the gaze is over this object.
 
         protected bool m_IsOver;
 
@@ -66,24 +63,6 @@ namespace VRStandardAssets.Utils
         {
             if (OnDown != null)
                 OnDown();
-        }
-
-        public void KeyPress(KeyCode key)
-        {
-            if (OnKeyPress != null)
-                OnKeyPress(key);
-        }
-
-        public void KeyRelease(KeyCode key)
-        {
-            if (OnKeyPress != null)
-                OnKeyRelease(key);
-        }
-
-        public void KeyDoublePress(KeyCode key)
-        {
-            if (OnKeyDoublePress != null)
-                OnKeyDoublePress(key);
         }
     }
 }
