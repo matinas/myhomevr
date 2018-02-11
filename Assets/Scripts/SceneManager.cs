@@ -10,7 +10,7 @@ namespace HomeVR {
 		[SerializeField] private SelectionRadial m_Radial;                  // Likewise, since only SelectionSliders are used, the radial should be hidden.
 
 		// Use this for initialization
-		void Start () {
+		void Awake () {
 			
 			m_Reticle.Show();
 			m_Radial.Hide();

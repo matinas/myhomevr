@@ -1,10 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
+using UnityEngine.Video;
 using VRStandardAssets.Utils;
 
-public class FanInteractiveElement : MonoBehaviour
+public class VRActionTriggerer : MonoBehaviour
 {
+	public event Action OnActionTrigger;
+	public event Action OnOver;
+	public event Action OnOut;
+	
 	[SerializeField] private VRInteractiveItem m_InteractiveItem;
 	[SerializeField] private SelectionRadial m_SelectionRadial;
 	private bool m_GazeOver;                                            // Whether the user is looking at the VRInteractiveItem currently.
@@ -42,6 +46,9 @@ public class FanInteractiveElement : MonoBehaviour
 	{
 		m_SelectionRadial.Show();
 
+		if (OnOver != null)
+			OnOver();
+
 		if (m_SelectionRadial.m_GazeBased)
 			m_SelectionRadial.m_SelectionFillRoutine = StartCoroutine(m_SelectionRadial.FillSelectionRadial());
 
@@ -62,37 +69,26 @@ public class FanInteractiveElement : MonoBehaviour
 		m_SelectionRadial.Hide();
 
 		m_GazeOver = false;
+
+		if (OnOut != null)
+			OnOut();
 	}
 
 	void HandleClick()
 	{
+		if (m_SelectionRadial.m_Full2DUI)
+			OnActionTrigger();
 	}
 
 	void HandleDoubleClick()
 	{
+		if (m_SelectionRadial.m_Full2DUI)
+			OnActionTrigger();
 	}
 
 	void HandleSelectionComplete()
 	{
-		// If the user is looking at the rendering of the scene when the radial's selection finishes, activate the button.
 		if(m_GazeOver)
-		{
-			AudioSource audio = GetComponent<AudioSource>();
-			FanController fanController = GetComponent<FanController>();
-
-			if (audio != null)
-			{
-				if (audio.isPlaying)
-				{
-					audio.Stop();
-					fanController.enabled = false;
-				}
-				else
-				{
-					audio.Play();
-					fanController.enabled = true;
-				}
-			}
-		}
+			OnActionTrigger();
 	}
 }

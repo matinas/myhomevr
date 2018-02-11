@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class SpinController : MonoBehaviour {
+public class FanController : MonoBehaviour {
 
 	public int speed;
 
