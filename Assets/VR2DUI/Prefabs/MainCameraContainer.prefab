@@ -156,8 +156,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1127728874280272}
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 1.6, z: 0}
+  m_LocalRotation: {x: -0, y: -0.7071068, z: 0.0000000037252903, w: 0.70710677}
+  m_LocalPosition: {x: -0, y: 1.6, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4163920969230648}
@@ -260,7 +260,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Camera: {fileID: 4163920969230648}
-  m_ExclusionLayers: {}
+  m_ExclusionLayers:
+    serializedVersion: 2
+    m_Bits: 0
   m_Reticle: {fileID: 114669960346630692}
   m_VrInput: {fileID: 114133921134260506}
   m_ShowDebugRay: 1
@@ -353,11 +355,7 @@ MonoBehaviour:
   m_FadeImage: {fileID: 114979828116516560}
   m_DefaultSnapshot: {fileID: 0}
   m_FadedSnapshot: {fileID: 0}
-  m_FadeColor:
-    r: 0
-    g: 0
-    b: 0
-    a: 1
+  m_FadeColor: {r: 0, g: 0, b: 0, a: 1}
   m_FadeDuration: 0.5
   m_FadeInOnSceneLoad: 1
   m_FadeInOnStart: 0
