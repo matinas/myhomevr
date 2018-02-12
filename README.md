@@ -16,17 +16,48 @@ The idea is to include the rest of the furniture and other missing elements tryi
 - _Animation_: I animated the ceiling fan in the center of the room. I initially guessed it wouldn't be difficult to animate as it was just matter of adding a cylindrical base for the fan in which all the blades are attached, and then the animation would be achieved by rotating just the cylindrical base (considering the blades are child objects of the base, so they will also rotate accordingly). Anyway, I couldn't achieve a smooth animation using the Unity's Animation System as when the animation was configured to loop there was a bit of jumpiness between the last keyframe and the first one. The alternative solution was to animate it through a custom Script which just rotates the fan base by a few degrees on each frame indefinitely.
 - _Audio_: I've added a sound effect for the spinning ceiling fan so you can hear it spinning from above your head. It's basically a mono sound attached to the fan itself so Unity applies the HRTF function to get spatialized sound for it. Additionally, I added some ambient sound coming from the TV. For this one, I've used a VideoClip so I can texture a plane placed above the TV display with a video. Doing so it should have also reproduced the video's audio but didn't work for me, so I had to download the audio track for the video separately and import it into Unity as an audio file. Then I added the audio as a new AudioClip which referenced by the VideoClip component.
 
+# User Interaction
 
-**To run it with Google Cardboard:**
+So far we have described the scene generated for the second course of this Specialization, so this section describes all the features added for this submission related to User Interaction. First of all, it's worth mentioning that the project does not use the given scripts (VR Interaction Utils package) as I managed to understand all the VR Samples and make a little interaction library on my own, so you won't find them as part of the Unity project. Anyway, despite some differences the final result seems quite similar. The supported features are almost the same, although the included interaction library supports three different types of interaction (all those can be configured in the Selection Radial element as part of the Main Camera components):
+
+1.	Fully gazed: this type of interaction requires that the user looks in the direction of an interactible object (a selection radial will appear always an interactible object is gazed) so the selection radial automatically starts filling. When the bar completes the corresponding action is triggered. This type of interaction is useful for mobile headsets in which the only type of input is head rotation. For example, Google Cardboard. Note: it can also be used for high-end headsets though.
+2.	Gaze plus 2DUI with selection bar: this type of interaction requires that the user looks in the direction of an interactible object (a selection radial will appear always an interactible object is gazed) and then click the fire button so the selection radial starts filling. When the bar completes the corresponding action is triggered. This type of interaction is useful for mobile headsets which include some form of 2D input, such as a button, a touchpad or a trigger. For example, Samsung GearVR. Note: it can also be used for high-end headsets though.
+3.	Gaze plus 2DUI without selection bar: this type of interaction requires that the user looks in the direction of an interactible object (a selection radial will appear always an interactible object is gazed) and then click or double click the fire button so the action is triggered. In this case, the selection radial must not be filled and the interaction triggers automatically as soon as click is detected. This type of interaction is useful for mobile headsets which include some form of 2D input, such as a button, a touchpad or a trigger. For example, Samsung GearVR. Note: it can also be used for high-end headsets though.
+4.	***[TBD]*** Natural Interaction: this type of interaction will require that the user just grab objects with his virtual hands, and it's is useful for high-end headsets which include 6 DoF in both the headset and the controllers, for example, Oculus or HTC Vive.
+
+In the following subsections all the navigation and interaction features are detailed.
+
+**Navigation**
+
+For the Cardboard version, the navigation was implemented using little platforms among the scene so after selecting one of them by gazing and waiting the selection radial to fill, the user immediately moves to that location in a blink of an eye (it also includes a little fade out/in in order to avoid discomfort). In this case, the locations the user can move will be pre-defined, so there are one or two navigation platforms in each room of the house, so the user is able to move along all the house jumping between these predefined spots (take into account that some rooms are empty yet!).
+
+***[TBD]*** For the HTC Vive version, the navigation will be implemented with teleportation. So using the Vive Controllers the user points to any position in the scene, press the trigger and automatically teleports to that location. This case implies more freedom as you can navigate the whole house without restrictions or pre-defined spots.
+
+**Interaction**
+
+The plan is to have a subset of the objects in the scene which can be selected/manipulated (mainly objects above tables, the TV, the ceiling fan, etc. but not furniture, walls and other less natural objects to interacts with).
+For the Cardboard version, the selection and manipulation will be gaze-based. So you look to an object and, depending on the interaction method configured, the selection radial starts filing up. If it gets completely filled the object is selected and depending on the object a different action will be triggered (if it's a "grabable" object it will be shown near the user for a few seconds, if it's an interactible-only object it will trigger the associated action, for example, turning the TV on/off). In this case the interaction is magical, as the user is selecting objects from the distance using just his gaze.
+
+***[TBD]*** For the HTC Vive version, the selection and manipulation will be based on the use of the Vive Controllers. So to grab an object you just put your virtual hand near the object and press the trigger. In this line, for example, a book will be grabbed by the virtual hand until the user stops pressing the trigger, the TV will be turned on/off, and an exceptional case will be the ceiling fan, which will have a little rope hanging from the center you have to pull and it will start spinning (at least I'll try to implement it in that way :P). In this case the interactions will be fully natural, as the user will be interacting with the different objects in the same way he would do in the real world.
+
+The following interactions are supported so far (more will be supported for the final submission of this course):
+
+1.	When selecting the ceiling fan, if turned off, it will start spinning. When powered on, if selected it will be turned off.
+2.	When selecting the TV, if turned off, it will be turned on and start showing some pre-loaded video. When powered on, if selected it will be turned off.
+
+# How to run it
+
+**Build and run with Google Cardboard:**
 
 1.	Check Android is selected as Build Platform in the Build Settings (File > Build Settings).
 2.	Check Google Cardboard is selected in the Virtual Reality Supported list in the Rendering section of Player Settings (Edit > Project Settings > Other Settings > Rendering).
-3.	Translate Main Camera so X=-3.5, Y=3.1 and Z=-1. This position was obtained checking the camera transformation when using the HTC Vive headset, so it's based on real data. Anyway, obviously the best position will depend on the height of the user, so ideally the app should ask for the position in the case of mobile VR or let the user modify the initial position somehow (at least in the Y axis).
-4.	Build and Run.
+3.	Initially the position must be configured manually, but now the application already sets the camera position accordingly if it detects it's running on an Android device. This position was obtained checking the camera transformation when using the HTC Vive headset, so it's based on real data. Anyway, obviously the best position will depend on the height of the user, so ideally the app should ask for the position in the case of mobile VR or let the user modify the initial position somehow (at least in the Y axis).
+4.	Check that the interaction method to be used is Gaze-based. This can be selected in the Selection Radial script attached to the Main Camera component.
+5.	Build and Run.
 
-**To run it with a SteamVR-compatible HMD:**
+**Build and run with a SteamVR-compatible HMD:**
 
 1.	Check PC is selected as Build Platform in the Build Settings (File > Build Settings).
 2.	Check OpenVR is selected in the Virtual Reality Supported list in the Rendering section of Player Settings (Edit > Project Settings > Other Settings > Rendering).
-3.	Translate Main Camera so X=-3.5, Y=1.6 and Z=-1. This is because the camera position defines the center of the play space, so this way the play space lies directly above the floor (which is at Y=1.6). It would probably be better to reset the position of all the components so the floor and camera both lies at Y=0, but for now just set it with the aforementioned value.
+3.	Check that the interaction method is the desired (fully gaze-based, gaze-based plus 2DUI and selection bar, or gaze-based plus 2DUI without selection bar). This can be selected in the Selection Radial script attached to the Main Camera component.
 4.	Build and Run.
