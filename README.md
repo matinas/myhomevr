@@ -8,7 +8,7 @@ The idea is to include the rest of the furniture and other missing elements tryi
    <img src="https://user-images.githubusercontent.com/5633645/35434576-6bca27dc-0266-11e8-8556-831294d19b0d.png" alt="home_2" style="max-width:100%" width="512" heigth="512">
    <img src="https://user-images.githubusercontent.com/5633645/35844768-ec46c930-0aed-11e8-916e-480bc2837d5d.gif" alt="home_2" style="max-width:100%" width="512" heigth="512">
 
-**A bit more information**
+## A bit more information
 
 - _Materials and Textures_: the floor has a material which has a parquet texture associated and the corresponding normal map so to achieve some roughness in parquet's wood. Also the walls, the ceiling and the objects from the Simple Home Stuff package has their own material. All of the materials uses the Standard shader to render the object though.
 - _Scale_: I've tried the scale both in Google Cardboard and HTC Vive and the room and all the objects seems to be pretty much life-size. Furthermore, to define the camera position to be used in the mobile VR headset I used the HTC Vive tracking as a helper, so to hardcode a real world camera position which corresponds to my height (after headset donned).
@@ -20,14 +20,14 @@ The idea is to include the rest of the furniture and other missing elements tryi
 
 So far we have described the scene generated for the second course of this Specialization, so this section describes all the features added for this submission related to User Interaction. First of all, it's worth mentioning that the project does not use the given scripts (VR Interaction Utils package) as I managed to understand all the VR Samples and make a little interaction library on my own, so you won't find them as part of the Unity project. Anyway, despite some differences the final result seems quite similar. The supported features are almost the same, although the included interaction library supports three different types of interaction (all those can be configured in the Selection Radial element as part of the Main Camera components):
 
-1.	Fully gazed: this type of interaction requires that the user looks in the direction of an interactible object (a selection radial will appear always an interactible object is gazed) so the selection radial automatically starts filling. When the bar completes the corresponding action is triggered. This type of interaction is useful for mobile headsets in which the only type of input is head rotation. For example, Google Cardboard. Note: it can also be used for high-end headsets though.
-2.	Gaze plus 2DUI with selection bar: this type of interaction requires that the user looks in the direction of an interactible object (a selection radial will appear always an interactible object is gazed) and then click the fire button so the selection radial starts filling. When the bar completes the corresponding action is triggered. This type of interaction is useful for mobile headsets which include some form of 2D input, such as a button, a touchpad or a trigger. For example, Samsung GearVR. Note: it can also be used for high-end headsets though.
-3.	Gaze plus 2DUI without selection bar: this type of interaction requires that the user looks in the direction of an interactible object (a selection radial will appear always an interactible object is gazed) and then click or double click the fire button so the action is triggered. In this case, the selection radial must not be filled and the interaction triggers automatically as soon as click is detected. This type of interaction is useful for mobile headsets which include some form of 2D input, such as a button, a touchpad or a trigger. For example, Samsung GearVR. Note: it can also be used for high-end headsets though.
+1.	**Fully gazed:** this type of interaction requires that the user looks in the direction of an interactible object (a selection radial will appear always an interactible object is gazed) so the selection radial automatically starts filling. When the bar completes the corresponding action is triggered. This type of interaction is useful for mobile headsets in which the only type of input is head rotation. For example, Google Cardboard. Note: it can also be used for high-end headsets though.
+2.	**Gaze plus 2DUI with selection radial**: this type of interaction requires that the user looks in the direction of an interactible object (a selection radial will appear always an interactible object is gazed) and then click the fire button so the selection radial starts filling. When the bar completes the corresponding action is triggered. This type of interaction is useful for mobile headsets which include some form of 2D input, such as a button, a touchpad or a trigger. For example, Samsung GearVR. Note: it can also be used for high-end headsets though.
+3.	**Gaze plus 2DUI without selection radial:** this type of interaction requires that the user looks in the direction of an interactible object (a selection radial will appear always an interactible object is gazed) and then click or double click the fire button so the action is triggered. In this case, the selection radial must not be filled and the interaction triggers automatically as soon as click is detected. This type of interaction is useful for mobile headsets which include some form of 2D input, such as a button, a touchpad or a trigger. For example, Samsung GearVR. Note: it can also be used for high-end headsets though.
 4.	***[TBD]*** Natural Interaction: this type of interaction will require that the user just grab objects with his virtual hands, and it's is useful for high-end headsets which include 6 DoF in both the headset and the controllers, for example, Oculus or HTC Vive.
 
 In the following subsections all the navigation and interaction features are detailed.
 
-**Navigation**
+## Navigation
 
 For the Cardboard version, the navigation was implemented using little platforms among the scene so after selecting one of them by gazing and waiting the selection radial to fill, the user immediately moves to that location in a blink of an eye (it also includes a little fade out/in in order to avoid discomfort). In this case, the locations the user can move will be pre-defined, so there are one or two navigation platforms in each room of the house, so the user is able to move along all the house jumping between these predefined spots (take into account that some rooms are empty yet!).
 
@@ -37,7 +37,7 @@ For the Cardboard version, the navigation was implemented using little platforms
 
 ***[TBD]*** For the HTC Vive version, the navigation will be implemented with teleportation. So using the Vive Controllers the user points to any position in the scene, press the trigger and automatically teleports to that location. This case implies more freedom as you can navigate the whole house without restrictions or pre-defined spots.
 
-**Interaction**
+## Interaction
 
 The plan is to have a subset of the objects in the scene which can be selected/manipulated (mainly objects above tables, the TV, the ceiling fan, etc. but not furniture, walls and other less natural objects to interacts with).
 For the Cardboard version, the selection and manipulation will be gaze-based. So you look to an object and, depending on the interaction method configured, the selection radial starts filing up. If it gets completely filled the object is selected and depending on the object a different action will be triggered (if it's a "grabable" object it will be shown near the user for a few seconds, if it's an interactible-only object it will trigger the associated action, for example, turning the TV on/off). In this case the interaction is magical, as the user is selecting objects from the distance using just his gaze.
@@ -51,7 +51,7 @@ The following interactions are supported so far (more will be supported for the 
 
 # How to run it
 
-**Build and run with Google Cardboard:**
+## Build and run with Google Cardboard
 
 1.	Check Android is selected as Build Platform in the Build Settings (File > Build Settings).
 2.	Check Google Cardboard is selected in the Virtual Reality Supported list in the Rendering section of Player Settings (Edit > Project Settings > Other Settings > Rendering).
@@ -59,7 +59,7 @@ The following interactions are supported so far (more will be supported for the 
 4.	Check that the interaction method to be used is Gaze-based. This can be selected in the Selection Radial script attached to the Main Camera component.
 5.	Build and Run.
 
-**Build and run with a SteamVR-compatible HMD:**
+## Build and run with a SteamVR-compatible HMD
 
 1.	Check PC is selected as Build Platform in the Build Settings (File > Build Settings).
 2.	Check OpenVR is selected in the Virtual Reality Supported list in the Rendering section of Player Settings (Edit > Project Settings > Other Settings > Rendering).
