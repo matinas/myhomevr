@@ -31,6 +31,10 @@ In the following subsections all the navigation and interaction features are det
 
 For the Cardboard version, the navigation was implemented using little platforms among the scene so after selecting one of them by gazing and waiting the selection radial to fill, the user immediately moves to that location in a blink of an eye (it also includes a little fade out/in in order to avoid discomfort). In this case, the locations the user can move will be pre-defined, so there are one or two navigation platforms in each room of the house, so the user is able to move along all the house jumping between these predefined spots (take into account that some rooms are empty yet!).
 
+<img src="https://user-images.githubusercontent.com/5633645/36087798-f273afb6-0fb2-11e8-976a-ba4a2377ba7d.png" alt="home_2" style="max-width:100%" width="512" heigth="512">
+
+<img src="https://user-images.githubusercontent.com/5633645/36087799-f5ff38bc-0fb2-11e8-9f4a-8562f0f4e3a1.png" alt="home_2" style="max-width:100%" width="512" heigth="512">
+
 ***[TBD]*** For the HTC Vive version, the navigation will be implemented with teleportation. So using the Vive Controllers the user points to any position in the scene, press the trigger and automatically teleports to that location. This case implies more freedom as you can navigate the whole house without restrictions or pre-defined spots.
 
 **Interaction**
