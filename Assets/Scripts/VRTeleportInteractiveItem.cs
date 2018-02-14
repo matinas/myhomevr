@@ -14,6 +14,7 @@ public class VRTeleportInteractiveItem : MonoBehaviour
 	[SerializeField] private Transform mainCamera;
 	[SerializeField] private AudioClip m_teleport_ini;
 	[SerializeField] private AudioClip m_teleport_end;
+	[SerializeField] private Canvas m_canvas;
 
 	// Use this for initialization
 	void OnEnable () {
@@ -32,12 +33,21 @@ public class VRTeleportInteractiveItem : MonoBehaviour
 	{
 		if (m_Renderer != null)
 			m_Renderer.material = m_OverMaterial;
+		
+		if (m_canvas != null)
+		{
+			m_canvas.enabled = true;
+			m_canvas.transform.eulerAngles = new Vector3(0.0f,mainCamera.transform.localEulerAngles.y,0.0f); // Rotate canvas so to face the actual camera direction
+		}
 	}
 
 	void HandleOut()
 	{
 		if (m_Renderer != null)
 			m_Renderer.material = m_NormalMaterial;
+
+		if (m_canvas != null)
+			m_canvas.enabled = false;
 	}
 
 	void HandleActionTrigger()
