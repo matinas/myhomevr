@@ -6,9 +6,9 @@ using VRStandardAssets.Utils;
 
 public class VRTVInteractiveItem : MonoBehaviour
 {
-	public VRActionTriggerer m_actionTriggerer;
-	private VideoPlayer player;
-	private AudioSource audio;
+	[SerializeField] private VRActionTriggerer m_actionTriggerer;
+	[SerializeField] private VideoPlayer player;
+	[SerializeField] private AudioSource audio;
 
 	private void Awake()
 	{

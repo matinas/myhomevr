@@ -16,7 +16,7 @@ namespace HomeVR {
 			m_Reticle.Show();
 			m_Radial.Hide();
 		
-			#if UNITY_ANDROID
+			#if UNITY_ANDROID || UNITY_EDITOR
 				m_mainCamera.position = new Vector3(m_mainCamera.position.x,m_mainCamera.position.y+1.6f,m_mainCamera.position.z);
 			#endif
 		}
