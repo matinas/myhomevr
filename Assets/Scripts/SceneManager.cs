@@ -19,6 +19,12 @@ namespace HomeVR {
 			#if UNITY_ANDROID || UNITY_EDITOR
 				m_mainCamera.position = new Vector3(m_mainCamera.position.x,m_mainCamera.position.y+1.6f,m_mainCamera.position.z);
 			#endif
+
+			#if UNITY_EDITOR
+            	m_mainCamera.GetComponent<MoveCamera>().enabled = true;
+        	#else
+	            m_mainCamera.GetComponent<MoveCamera>().enabled = true;
+    	    #endif
 		}
 	}
 }

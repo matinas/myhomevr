@@ -15,6 +15,7 @@ public class VRTeleportInteractiveItem : MonoBehaviour
 	[SerializeField] private AudioClip m_teleport_ini;
 	[SerializeField] private AudioClip m_teleport_end;
 	[SerializeField] private Canvas m_canvas;
+	[SerializeField] private Animator m_canvasAnimator;
 
 	// Use this for initialization
 	void OnEnable () {
@@ -36,8 +37,15 @@ public class VRTeleportInteractiveItem : MonoBehaviour
 		
 		if (m_canvas != null)
 		{
-			m_canvas.enabled = true;
-			m_canvas.transform.eulerAngles = new Vector3(0.0f,mainCamera.transform.localEulerAngles.y,0.0f); // Rotate canvas so to face the actual camera direction
+			m_canvas.gameObject.SetActive(true);
+
+			// Rotate canvas so to face the actual camera direction. Either method doesn't work on Android...
+			#if UNITY_EDITOR || UNITY_STANDALONE
+				m_canvas.transform.eulerAngles = new Vector3(0.0f,mainCamera.transform.localEulerAngles.y,0.0f);
+				//m_canvas.transform.localRotation = new Quaternion(0.0f,mainCamera.localRotation.y,0.0f,mainCamera.localRotation.w);
+			#elif UNITY_ANDROID
+				m_canvas.transform.LookAt(mainCamera.transform.position); // Not perfect but was the way that produced better results
+			#endif
 		}
 	}
 
@@ -47,7 +55,7 @@ public class VRTeleportInteractiveItem : MonoBehaviour
 			m_Renderer.material = m_NormalMaterial;
 
 		if (m_canvas != null)
-			m_canvas.enabled = false;
+			m_canvas.gameObject.SetActive(false);
 	}
 
 	void HandleActionTrigger()

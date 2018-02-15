@@ -10,15 +10,6 @@ public class MoveCamera : MonoBehaviour
     [SerializeField] private float yaw = 0.0f;
     [SerializeField] private float pitch = 0.0f;
 
-    void Awake()
-    {
-        #if UNITY_EDITOR
-            gameObject.active = true;
-        #else
-            gameObject.active = false;
-        #endif
-    }
-
 	// Update is called once per frame
 	void Update ()
     {

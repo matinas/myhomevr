@@ -5,6 +5,6 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Living Room.unity
-    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Living Room.unity
+    guid: 6ea813c908fdc934fa0079b46e12f2f3

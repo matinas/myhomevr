@@ -44,7 +44,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1745440301035452
 GameObject:
   m_ObjectHideFlags: 0
@@ -103,15 +103,15 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1807108631684010}
-  m_LocalRotation: {x: -0, y: -0.9953694, z: -0, w: -0.09612376}
-  m_LocalPosition: {x: -0.368, y: 0.0028214455, z: -8.864}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0.7728226, z: -0, w: 0.63462216}
+  m_LocalPosition: {x: -10.79, y: 0.0028214455, z: 0.83}
+  m_LocalScale: {x: 0.9999999, y: 1, z: 0.9999999}
   m_Children:
   - {fileID: 4356333182439314}
   - {fileID: 4758841414075662}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -191.032, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -101.216, z: 0}
 --- !u!4 &4628805144869804
 Transform:
   m_ObjectHideFlags: 1
@@ -325,6 +325,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_InteractiveItem: {fileID: 114694983331368620}
   m_SelectionRadial: {fileID: 0}
+  m_tooltipText: {fileID: 0}
+  m_text: Open/Close
+  m_textColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &114919124279760816
 MonoBehaviour:
   m_ObjectHideFlags: 1

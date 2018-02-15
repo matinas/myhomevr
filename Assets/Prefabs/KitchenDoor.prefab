@@ -49,7 +49,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1682956460617880
 GameObject:
   m_ObjectHideFlags: 0
@@ -321,3 +321,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_InteractiveItem: {fileID: 114145414245370784}
   m_SelectionRadial: {fileID: 0}
+  m_tooltipText: {fileID: 0}
+  m_text: Open/Close
+  m_textColor: {r: 0, g: 0, b: 0, a: 0}

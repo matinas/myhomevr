@@ -1,4 +1,4 @@
-// Copyright 2017 Google Inc. All rights reserved.
+﻿// Copyright 2017 Google Inc. All rights reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -13,6 +13,7 @@
 // limitations under the License.
 
 using UnityEngine;
+using UnityEngine.VR;
 using System;
 using System.Collections;
 
@@ -107,21 +108,13 @@ public class GvrControllerInput : MonoBehaviour {
   private static IControllerProvider controllerProvider;
 
   private ControllerState controllerState = new ControllerState();
+  private IEnumerator controllerUpdate;
+  private WaitForEndOfFrame waitForEndOfFrame = new WaitForEndOfFrame();
   private Vector2 touchPosCentered = Vector2.zero;
 
-  private int lastUpdatedFrameCount = -1;
-
-  /// Event handler for receiving button, touchpad, and IMU updates from the controller.
-  /// Use this handler to update app state based on controller input.
+  /// Event handler for receiving button, track pad, and IMU updates from the controller.
   public static event Action OnControllerInputUpdated;
-
-  /// Event handler for receiving a second notification callback, after all
-  /// `OnControllerInputUpdated` events have fired.
   public static event Action OnPostControllerInputUpdated;
-
-  /// Event handler for when the connection state of the controller changes.
-  public delegate void OnStateChangedEvent(GvrConnectionState state, GvrConnectionState oldState);
-  public static event OnStateChangedEvent OnStateChanged;
 
   public enum EmulatorConnectionMode {
     OFF,
@@ -143,121 +136,82 @@ public class GvrControllerInput : MonoBehaviour {
   /// Returns the controller's current connection state.
   public static GvrConnectionState State {
     get {
-      if (instance == null) {
-        return GvrConnectionState.Error;
-      }
-      instance.Update();
-      return instance.controllerState.connectionState;
+      return instance != null ? instance.controllerState.connectionState : GvrConnectionState.Error;
     }
   }
 
   /// Returns the API status of the current controller state.
   public static GvrControllerApiStatus ApiStatus {
     get {
-      if (instance == null) {
-        return GvrControllerApiStatus.Error;
-      }
-      instance.Update();
-      return instance.controllerState.apiStatus;
+      return instance != null ? instance.controllerState.apiStatus : GvrControllerApiStatus.Error;
     }
   }
 
   /// Returns true if battery status is supported.
   public static bool SupportsBatteryStatus {
     get {
-      if (controllerProvider == null || instance == null) {
-        return false;
-      }
-      instance.Update();
-      return controllerProvider.SupportsBatteryStatus;
+      return controllerProvider != null ? controllerProvider.SupportsBatteryStatus : false;
     }
   }
 
   /// Returns the controller's current orientation in space, as a quaternion.
-  /// The rotation is provided in 'orientation space' which means the rotation is given relative
-  /// to the last time the user recentered their controller. To make a game object in your scene
-  /// have the same orientation as the controller, simply assign this quaternion to the object's
-  /// `transform.rotation`. To match the relative rotation, use `transform.localRotation` instead.
+  /// The space in which the orientation is represented is the usual Unity space, with
+  /// X pointing to the right, Y pointing up and Z pointing forward. Therefore, to make an
+  /// object in your scene have the same orientation as the controller, simply assign this
+  /// quaternion to the GameObject's transform.rotation.
   public static Quaternion Orientation {
     get {
-      if (instance == null) {
-        return Quaternion.identity;
-      }
-      instance.Update();
-      return instance.controllerState.orientation;
+      return instance != null ? instance.controllerState.orientation : Quaternion.identity;
     }
   }
 
-  /// Returns the controller's current angular speed in radians per second, using the right-hand
-  /// rule (positive means a right-hand rotation about the given axis), as measured by the
-  /// controller's gyroscope.
-  /// The controller's axes are:
-  /// - X points to the right,
-  /// - Y points perpendicularly up from the controller's top surface
-  /// - Z lies along the controller's body, pointing towards the front
+  /// Returns the controller's gyroscope reading. The gyroscope indicates the angular
+  /// about each of its local axes. The controller's axes are: X points to the right,
+  /// Y points perpendicularly up from the controller's top surface and Z lies
+  /// along the controller's body, pointing towards the front. The angular speed is given
+  /// in radians per second, using the right-hand rule (positive means a right-hand rotation
+  /// about the given axis).
   public static Vector3 Gyro {
     get {
-      if (instance == null) {
-        return Vector3.zero;
-      }
-      instance.Update();
-      return instance.controllerState.gyro;
+      return instance != null ? instance.controllerState.gyro : Vector3.zero;
     }
   }
 
-  /// Returns the controller's current acceleration in meters per second squared.
-  /// The controller's axes are:
-  /// - X points to the right,
-  /// - Y points perpendicularly up from the controller's top surface
-  /// - Z lies along the controller's body, pointing towards the front
-  /// Note that gravity is indistinguishable from acceleration, so when the controller is resting
-  /// on a surface, expect to measure an acceleration of 9.8 m/s^2 on the Y axis. The accelerometer
-  /// reading will be zero on all three axes only if the controller is in free fall, or if the user
+  /// Returns the controller's accelerometer reading. The accelerometer indicates the
+  /// effect of acceleration and gravity in the direction of each of the controller's local
+  /// axes. The controller's local axes are: X points to the right, Y points perpendicularly
+  /// up from the controller's top surface and Z lies along the controller's body, pointing
+  /// towards the front. The acceleration is measured in meters per second squared. Note that
+  /// gravity is combined with acceleration, so when the controller is resting on a table top,
+  /// it will measure an acceleration of 9.8 m/s^2 on the Y axis. The accelerometer reading
+  /// will be zero on all three axes only if the controller is in free fall, or if the user
   /// is in a zero gravity environment like a space station.
   public static Vector3 Accel {
     get {
-      if (instance == null) {
-        return Vector3.zero;
-      }
-      instance.Update();
-      return instance.controllerState.accel;
+      return instance != null ? instance.controllerState.accel : Vector3.zero;
     }
   }
 
-  /// Returns true while the user is touching the touchpad.
+  /// If true, the user is currently touching the controller's touchpad.
   public static bool IsTouching {
     get {
-      if (instance == null) {
-        return false;
-      }
-      instance.Update();
-      return instance.controllerState.isTouching;
+      return instance != null ? instance.controllerState.isTouching : false;
     }
   }
 
-  /// Returns true in the frame the user starts touching the touchpad.  Every TouchDown event
-  /// is guaranteed to be followed by exactly one TouchUp event in a later frame.
-  /// Also, TouchDown and TouchUp will never both be true in the same frame.
+  /// If true, the user just started touching the touchpad. This is an event flag (it is true
+  /// for only one frame after the event happens, then reverts to false).
   public static bool TouchDown {
     get {
-      if (instance == null) {
-        return false;
-      }
-      instance.Update();
-      return instance.controllerState.touchDown;
+      return instance != null ? instance.controllerState.touchDown : false;
     }
   }
 
-  /// Returns true the frame after the user stops touching the touchpad.  Every TouchUp event
-  /// is guaranteed to be preceded by exactly one TouchDown event in an earlier frame.
-  /// Also, TouchDown and TouchUp will never both be true in the same frame.
+  /// If true, the user just stopped touching the touchpad. This is an event flag (it is true
+  /// for only one frame after the event happens, then reverts to false).
   public static bool TouchUp {
     get {
-      if (instance == null) {
-        return false;
-      }
-      instance.Update();
-      return instance.controllerState.touchUp;
+      return instance != null ? instance.controllerState.touchUp : false;
     }
   }
 
@@ -267,11 +221,7 @@ public class GvrControllerInput : MonoBehaviour {
   /// (0, 0) is the top left of the touchpad and (1, 1) is the bottom right of the touchpad.
   public static Vector2 TouchPos {
     get {
-      if (instance == null) {
-        return new Vector2(0.5f,0.5f);
-      }
-      instance.Update();
-      return instance.controllerState.touchPos;
+      return instance != null ? instance.controllerState.touchPos : new Vector2(0.5f,0.5f);
     }
   }
 
@@ -282,140 +232,98 @@ public class GvrControllerInput : MonoBehaviour {
   /// The magnitude of the touch vector is guaranteed to be <= 1.
   public static Vector2 TouchPosCentered {
     get {
-      if (instance == null) {
-        return Vector2.zero;
-      }
-      instance.Update();
-      return instance.touchPosCentered;
+      return instance != null ? instance.touchPosCentered : Vector2.zero;
     }
   }
 
-  [System.Obsolete("Use Recentered to detect when user has completed the recenter gesture.")]
+  /// If true, the user is currently performing the recentering gesture. Most apps will want
+  /// to pause the interaction while this remains true.
   public static bool Recentering {
     get {
-      return false;
+      return instance != null ? instance.controllerState.recentering : false;
     }
   }
 
-  /// Returns true if the user just completed the recenter gesture. The headset and
-  /// the controller's orientation are now being reported in the new recentered
-  /// coordinate system. This is an event flag (it is true for only one frame
-  /// after the event happens, then reverts to false).
+  /// If true, the user just completed the recenter gesture. The controller's orientation is
+  /// now being reported in the new recentered coordinate system (the controller's orientation
+  /// when recentering was completed was remapped to mean "forward"). This is an event flag
+  /// (it is true for only one frame after the event happens, then reverts to false).
+  /// The headset is recentered together with the controller.
   public static bool Recentered {
     get {
-      if (instance == null) {
-        return false;
-      }
-      instance.Update();
-      return instance.controllerState.recentered;
+      return instance != null ? instance.controllerState.recentered : false;
     }
   }
 
-  /// Returns true while the user holds down the click button (touchpad button).
+  /// If true, the click button (touchpad button) is currently being pressed. This is not
+  /// an event: it represents the button's state (it remains true while the button is being
+  /// pressed).
   public static bool ClickButton {
     get {
-      if (instance == null) {
-        return false;
-      }
-      instance.Update();
-      return instance.controllerState.clickButtonState;
+      return instance != null ? instance.controllerState.clickButtonState : false;
     }
   }
 
-  /// Returns true in the frame the user starts pressing down the click button.
-  /// (touchpad button).  Every ClickButtonDown event is
-  /// guaranteed to be followed by exactly one ClickButtonUp event in a later frame.
-  /// Also, ClickButtonDown and ClickButtonUp will never both be true in the same frame.
+  /// If true, the click button (touchpad button) was just pressed. This is an event flag:
+  /// it will be true for only one frame after the event happens.
   public static bool ClickButtonDown {
     get {
-      if (instance == null) {
-        return false;
-      }
-      instance.Update();
-      return instance.controllerState.clickButtonDown;
+      return instance != null ? instance.controllerState.clickButtonDown : false;
     }
   }
 
-  /// Returns true the frame after the user stops pressing down the click button.
-  /// (touchpad button).  Every ClickButtonUp event
-  /// is guaranteed to be preceded by exactly one ClickButtonDown event in an earlier frame.
-  /// Also, ClickButtonDown and ClickButtonUp will never both be true in the same frame.
+  /// If true, the click button (touchpad button) was just released. This is an event flag:
+  /// it will be true for only one frame after the event happens.
   public static bool ClickButtonUp {
     get {
-      if (instance == null) {
-        return false;
-      }
-      instance.Update();
-      return instance.controllerState.clickButtonUp;
+      return instance != null ? instance.controllerState.clickButtonUp : false;
     }
   }
 
-  /// Returns true while the user holds down the app button.
+  /// If true, the app button (touchpad button) is currently being pressed. This is not
+  /// an event: it represents the button's state (it remains true while the button is being
+  /// pressed).
   public static bool AppButton {
     get {
-      if (instance == null) {
-        return false;
-      }
-      instance.Update();
-      return instance.controllerState.appButtonState;
+      return instance != null ? instance.controllerState.appButtonState : false;
     }
   }
 
-  /// Returns true in the frame the user starts pressing down the app button.
-  /// Every AppButtonDown event is guaranteed
-  /// to be followed by exactly one AppButtonUp event in a later frame.
-  /// Also, AppButtonDown and AppButtonUp will never both be true in the same frame.
+  /// If true, the app button was just pressed. This is an event flag: it will be true for
+  /// only one frame after the event happens.
   public static bool AppButtonDown {
     get {
-      if (instance == null) {
-        return false;
-      }
-      instance.Update();
-      return instance.controllerState.appButtonDown;
+      return instance != null ? instance.controllerState.appButtonDown : false;
     }
   }
 
-  /// Returns true the frame after the user stops pressing down the app button.
-  /// Every AppButtonUp event
-  /// is guaranteed to be preceded by exactly one AppButtonDown event in an earlier frame.
-  /// Also, AppButtonDown and AppButtonUp will never both be true in the same frame.
+  /// If true, the app button was just released. This is an event flag: it will be true for
+  /// only one frame after the event happens.
   public static bool AppButtonUp {
     get {
-      if (instance == null) {
-        return false;
-      }
-      instance.Update();
-      return instance.controllerState.appButtonUp;
+      return instance != null ? instance.controllerState.appButtonUp : false;
     }
   }
 
-  /// Returns true in the frame the user starts pressing down the home button.
+  /// If true, the home button was just pressed.
   public static bool HomeButtonDown {
     get {
-      if (instance == null) {
-        return false;
-      }
-      instance.Update();
-      return instance.controllerState.homeButtonDown;
+      return instance != null ? instance.controllerState.homeButtonDown : false;
     }
   }
 
-  /// Returns true while the user holds down the home button.
+  /// If true, the home button is currently being pressed.
   public static bool HomeButtonState {
     get {
-      if (instance == null) {
-        return false;
-      }
-      instance.Update();
-      return instance.controllerState.homeButtonState;
+      return instance != null ? instance.controllerState.homeButtonState : false;
     }
   }
+
 
   /// If State == GvrConnectionState.Error, this contains details about the error.
   public static string ErrorDetails {
     get {
       if (instance != null) {
-        instance.Update();
         return instance.controllerState.connectionState == GvrConnectionState.Error ?
           instance.controllerState.errorDetails : "";
       } else {
@@ -428,33 +336,21 @@ public class GvrControllerInput : MonoBehaviour {
   // Returns the GVR C library controller state pointer (gvr_controller_state*).
   public static IntPtr StatePtr {
     get {
-      if (instance == null) {
-        return IntPtr.Zero;
-      }
-      instance.Update();
-      return instance.controllerState.gvrPtr;
+      return instance != null? instance.controllerState.gvrPtr : IntPtr.Zero;
     }
   }
 
-  /// Returns true if the controller is currently being charged.
+  /// If true, the user is currently touching the controller's touchpad.
   public static bool IsCharging {
     get {
-      if (instance == null) {
-        return false;
-      }
-      instance.Update();
-      return instance.controllerState.isCharging;
+      return instance != null ? instance.controllerState.isCharging : false;
     }
   }
 
-  /// Returns the controller's current battery charge level.
+  /// If true, the user is currently touching the controller's touchpad.
   public static GvrControllerBatteryLevel BatteryLevel {
     get {
-      if (instance == null) {
-        return GvrControllerBatteryLevel.Error;
-      }
-      instance.Update();
-      return instance.controllerState.batteryLevel;
+      return instance != null ? instance.controllerState.batteryLevel : GvrControllerBatteryLevel.Error;
     }
   }
 
@@ -475,40 +371,23 @@ public class GvrControllerInput : MonoBehaviour {
     Screen.sleepTimeout = SleepTimeout.NeverSleep;
   }
 
-  void Update() {
-    if(lastUpdatedFrameCount != Time.frameCount){
-      // The controller state must be updated prior to any function using the
-      // controller API to ensure the state is consistent throughout a frame.
-      lastUpdatedFrameCount = Time.frameCount;
-
-      GvrConnectionState oldState = State;
-
-      controllerProvider.ReadState(controllerState);
-      UpdateTouchPosCentered();
-
-#if UNITY_EDITOR
-      // Make sure the EditorEmulator is updated immediately.
-      if (GvrEditorEmulator.Instance != null) {
-        GvrEditorEmulator.Instance.UpdateEditorEmulation();
-      }
-#endif  // UNITY_EDITOR
-
-      if (OnStateChanged != null && State != oldState) {
-        OnStateChanged(State, oldState);
-      }
-
-      if (OnControllerInputUpdated != null) {
-        OnControllerInputUpdated();
-      }
-
-      if (OnPostControllerInputUpdated != null) {
-        OnPostControllerInputUpdated();
-      }
-    }
-  }
-
   void OnDestroy() {
     instance = null;
+  }
+
+  private void UpdateController() {
+    controllerProvider.ReadState(controllerState);
+
+#if UNITY_EDITOR
+    // If a headset recenter was requested, do it now.
+    if (controllerState.recentered) {
+      for (int i = 0; i < Camera.allCameras.Length; i++) {
+        Camera cam = Camera.allCameras[i];
+        // Do not reset pitch, which is how it works on the device.
+        cam.transform.localRotation = Quaternion.Euler(cam.transform.localRotation.eulerAngles.x, 0, 0);
+      }
+    }
+#endif  // UNITY_EDITOR
   }
 
   void OnApplicationPause(bool paused) {
@@ -520,8 +399,17 @@ public class GvrControllerInput : MonoBehaviour {
     }
   }
 
+  void OnEnable() {
+    controllerUpdate = EndOfFrame();
+    StartCoroutine(controllerUpdate);
+  }
+
+  void OnDisable() {
+    StopCoroutine(controllerUpdate);
+  }
+
   private void UpdateTouchPosCentered() {
-    if (instance == null) {
+    if(instance == null) {
       return;
     }
 
@@ -535,5 +423,22 @@ public class GvrControllerInput : MonoBehaviour {
     }
   }
 
+  IEnumerator EndOfFrame() {
+    while (true) {
+      // This must be done at the end of the frame to ensure that all GameObjects had a chance
+      // to read transient controller state (e.g. events, etc) for the current frame before
+      // it gets reset.
+      yield return waitForEndOfFrame;
+      UpdateController();
+      UpdateTouchPosCentered();
 
+      if (OnControllerInputUpdated != null) {
+        OnControllerInputUpdated();
+      }
+
+      if (OnPostControllerInputUpdated != null) {
+        OnPostControllerInputUpdated();
+      }
+    }
+  }
 }

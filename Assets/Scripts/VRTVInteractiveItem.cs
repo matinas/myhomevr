@@ -7,13 +7,13 @@ using VRStandardAssets.Utils;
 public class VRTVInteractiveItem : MonoBehaviour
 {
 	[SerializeField] private VRActionTriggerer m_actionTriggerer;
-	[SerializeField] private VideoPlayer player;
-	[SerializeField] private AudioSource audio;
+	[SerializeField] private VideoPlayer m_player;
+	[SerializeField] private AudioSource m_audio;
 
 	private void Awake()
 	{
-		player = GetComponent<VideoPlayer>();
-		audio = GetComponent<AudioSource>();
+		m_player = GetComponent<VideoPlayer>();
+		m_audio = GetComponent<AudioSource>();
 	}
 
 	// Use this for initialization
@@ -29,19 +29,19 @@ public class VRTVInteractiveItem : MonoBehaviour
 
 	void HandleActionTrigger()
 	{
-		if (player != null)
+		if (m_player != null)
 		{
-			if (player.isPlaying)
+			if (m_player.isPlaying)
 			{
-				player.Stop();
-				audio.Stop();
-				player.enabled = false;
+				m_player.Stop();
+				m_audio.Stop();
+				m_player.enabled = false;
 			}
 			else
 			{
-				player.enabled = true;
-				player.Play();
-				audio.Play();
+				m_player.enabled = true;
+				m_player.Play();
+				m_audio.Play();
 			}
 		}
 	}
