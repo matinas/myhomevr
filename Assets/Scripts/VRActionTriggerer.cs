@@ -70,7 +70,8 @@ public class VRActionTriggerer : MonoBehaviour
 		if (m_tooltipText != null) m_tooltipText.text = String.Empty;
 
 		if (m_SelectionRadial.m_GazeBased)
-			StopCoroutine(m_SelectionRadial.m_SelectionFillRoutine); // We stop it from this MonoBehaviours because it's the one that triggered the coroutine
+			if (m_SelectionRadial.m_SelectionFillRoutine != null)
+				StopCoroutine(m_SelectionRadial.m_SelectionFillRoutine); // We stop it from this MonoBehaviours because it's the one that triggered the coroutine
 		else
 			if (m_SelectionRadial.m_SelectionFillRoutine != null)
 			{

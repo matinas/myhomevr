@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VR;
 using VRStandardAssets.Utils;
 
 public class VRTeleportInteractiveItem : MonoBehaviour
@@ -39,13 +40,9 @@ public class VRTeleportInteractiveItem : MonoBehaviour
 		{
 			m_canvas.gameObject.SetActive(true);
 
-			// Rotate canvas so to face the actual camera direction. Either method doesn't work on Android...
-			#if UNITY_EDITOR || UNITY_STANDALONE
-				m_canvas.transform.eulerAngles = new Vector3(0.0f,mainCamera.transform.localEulerAngles.y,0.0f);
-				//m_canvas.transform.localRotation = new Quaternion(0.0f,mainCamera.localRotation.y,0.0f,mainCamera.localRotation.w);
-			#elif UNITY_ANDROID
-				m_canvas.transform.LookAt(mainCamera.transform.position); // Not perfect but was the way that produced better results
-			#endif
+			// Rotate canvas so to face the actual camera direction, taking the orientation from the main camera
+			Transform vrCamera = mainCamera.GetChild(0).transform;
+			m_canvas.transform.eulerAngles = new Vector3(0.0f,vrCamera.eulerAngles.y,0.0f);
 		}
 	}
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using VRStandardAssets.Utils;
+using UnityEngine.VR;
 
 namespace HomeVR {
 	public class SceneManager : MonoBehaviour {
@@ -16,15 +17,14 @@ namespace HomeVR {
 			m_Reticle.Show();
 			m_Radial.Hide();
 		
-			#if UNITY_ANDROID || UNITY_EDITOR
-				m_mainCamera.position = new Vector3(m_mainCamera.position.x,m_mainCamera.position.y+1.6f,m_mainCamera.position.z);
-			#endif
+			Cursor.visible = false;
 
-			#if UNITY_EDITOR
-            	m_mainCamera.GetComponent<MoveCamera>().enabled = true;
-        	#else
-	            m_mainCamera.GetComponent<MoveCamera>().enabled = true;
-    	    #endif
+			#if UNITY_ANDROID
+				m_mainCamera.position = new Vector3(m_mainCamera.position.x,m_mainCamera.position.y+1.6f,m_mainCamera.position.z);
+			#else
+				if (!VRSettings.isDeviceActive)
+					m_mainCamera.position = new Vector3(m_mainCamera.position.x,m_mainCamera.position.y+1.6f,m_mainCamera.position.z);
+			#endif
 		}
 	}
 }

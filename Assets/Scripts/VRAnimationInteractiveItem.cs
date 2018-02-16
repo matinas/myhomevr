@@ -11,13 +11,13 @@ public class VRAnimationInteractiveItem : MonoBehaviour
 	[SerializeField] private string trigger;
 
 	// Use this for initialization
-	void OnEnable () {
-		
+	void OnEnable ()
+	{
 		m_actionTriggerer.OnActionTrigger += HandleActionTrigger;
 	}
 	
-	void OnDisable () {
-		
+	void OnDisable ()
+	{
 		m_actionTriggerer.OnActionTrigger -= HandleActionTrigger;
 	}
 
