@@ -76,7 +76,9 @@ In this line, the following interactions are supported so far:
 2. A useful object is the Universal Remote that can be found above the short table. After grabbing it you can point to different objects and press the touchpad button to interact with them. For example, the TV can be powered on/off, the fan can be powered on/off, and even some of the doors can be opened/closed using it. Now that's an universal remote! Check the video below this lines.
 3. Doors can be opened/closed by grabbing the handle by pulling the controller's trigger and moving the hand back or forth as you would do to open/close a real door.
 
-<a target="_blank" href="https://www.youtube.com/watch?v=jw8KjPF3hcQ"><img src="http://img.youtube.com/vi/jw8KjPF3hcQ/0.jpg" alt="Roll a Ball 3D" width="240" height="180" border="10" /></a>
+<a target="_blank" href="https://www.youtube.com/watch?v=jw8KjPF3hcQ"><img src="http://img.youtube.com/vi/jw8KjPF3hcQ/0.jpg" alt="Roll a Ball 3D" width="320" height="240" border="10" /></a>
+
+_Click on the image to open video_
 
 # How to run it
 
@@ -103,8 +105,12 @@ The project can be run directly from the Editor as it includes a basic mouse-bas
 
 ## 3 DOF
 
-https://www.youtube.com/watch?v=wGEwUGgWl5E
+<a target="_blank" href="https://www.youtube.com/watch?v=wGEwUGgWl5E"><img src="http://img.youtube.com/vi/wGEwUGgWl5E/0.jpg" alt="Roll a Ball 3D" width="640" height="480" border="10" /></a>
+
+_Click on the image to open video_
 
 ## 6 DOF
 
-https://www.youtube.com/watch?v=jw8KjPF3hcQ
+<a target="_blank" href="https://www.youtube.com/watch?v=jw8KjPF3hcQ"><img src="http://img.youtube.com/vi/jw8KjPF3hcQ/0.jpg" alt="Roll a Ball 3D" width="640" height="480" border="10" /></a>
+
+_Click on the image to open video_
