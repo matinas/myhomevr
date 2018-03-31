@@ -98,8 +98,8 @@ The project can be run directly from the Editor as it includes a basic mouse-bas
 
 1.	Check PC is selected as Build Platform in the Build Settings (File > Build Settings).
 2.	Check OpenVR is selected in the Virtual Reality Supported list in the Rendering section of Player Settings (Edit > Project Settings > Other Settings > Rendering).
-3.	Check that the interaction method is the desired (fully gaze-based, gaze-based plus 2DUI and selection bar, or gaze-based plus 2DUI without selection bar). This can be selected in the Selection Radial script attached to the Main Camera component.
-4.	Build and Run.
+3. When building the 3 DOF scene (Livingroom 3 DoF), check that the interaction method is the desired (fully gaze-based, gaze-based plus 2DUI and selection bar, or gaze-based plus 2DUI without selection bar). This can be selected in the Selection Radial script attached to the Main Camera component. If building the 6 DOF scene there is nothing to check.
+4.	Build and Run. In either case you must have SteamVR running for the application to work.
 
 # Demo videos
 
