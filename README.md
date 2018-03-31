@@ -18,25 +18,21 @@ The vast of the actual assets were taken from the [Simple Home Stuff](https://ww
 
 # User Interaction
 
-### 3 DOF
-
-So far we have described the scene generated for the second course of this Specialization, so this section describes all the features added for this submission related to User Interaction and Navigation. I implemented my own navigation and interaction library based on the [VR Samples](https://assetstore.unity.com/packages/essentials/tutorial-projects/vr-samples-51519) project. The included interaction library supports three different types of interaction (all those can be configured in the Selection Radial element as part of the Main Camera components):
+This section describes all the features related to User Interaction and Navigation. I implemented my own navigation and interaction library based on the [VR Samples](https://assetstore.unity.com/packages/essentials/tutorial-projects/vr-samples-51519) project. The included interaction library supports three different types of interaction (all those can be configured in the Selection Radial element as part of the Main Camera components):
 
 1.	**Fully gazed:** this type of interaction requires that the user looks in the direction of an interactible object (a selection radial will appear always an interactible object is gazed) so the selection radial automatically starts filling. When the bar completes the corresponding action is triggered. This type of interaction is useful for mobile headsets in which the only type of input is head rotation. For example, Google Cardboard. Note: it can also be used for high-end headsets though.
 2.	**Gaze plus 2DUI with selection radial**: this type of interaction requires that the user looks in the direction of an interactible object (a selection radial will appear always an interactible object is gazed) and then click the fire button so the selection radial starts filling. When the bar completes the corresponding action is triggered. This type of interaction is useful for mobile headsets which include some form of 2D input, such as a button, a touchpad or a trigger. For example, Samsung GearVR. Note: it can also be used for high-end headsets though.
 3.	**Gaze plus 2DUI without selection radial:** this type of interaction requires that the user looks in the direction of an interactible object (a selection radial will appear always an interactible object is gazed) and then click or double click the fire button so the action is triggered. In this case, the selection radial must not be filled and the interaction triggers automatically as soon as click is detected. This type of interaction is useful for mobile headsets which include some form of 2D input, such as a button, a touchpad or a trigger. For example, Samsung GearVR. Note: it can also be used for high-end headsets though.
 
-### 6 DOF
-
-4.	***[TBD]*** Natural Interaction: this type of interaction will require that the user just grab objects with his virtual hands, and it's is useful for high-end headsets which include 6 DoF in both the headset and the controllers, for example, Oculus or HTC Vive.
-
 Using any of the methods above, a UI tooltip text is shown indicating the action that the user can trigger when selecting the corresponding object. In the following subsections all the navigation and interaction features are detailed.
+
+When using a high-end VR system with motion controllers (scene "LivingRoom 6 DoF") an additional interaction method is added completely based on natural interaction, so the user can just grab objects with his virtual hands.
 
 ## Navigation
 
 ### 3 DOF
 
-For the Cardboard version, the navigation was implemented using little platforms among the scene so after selecting one of them by gazing and waiting the selection radial to fill, the user immediately moves to that location in a blink of an eye (it also includes a little fade out/in in order to avoid discomfort). A moving arrow will also appear as the user gaze to a navigation platform, indicating that he can move there. The locations the user can move will be pre-defined, and there are one or two navigation platforms in each room of the house, so the user is able to move along all the house jumping between these predefined spots.
+For the Cardboard version (scene "LivingRoom 3 DoF"), the navigation was implemented using little platforms among the scene so after selecting one of them by gazing and waiting the selection radial to fill, the user immediately moves to that location in a blink of an eye (it also includes a little fade out/in in order to avoid discomfort). A moving arrow will also appear as the user gaze to a navigation platform, indicating that he can move there. The locations the user can move will be pre-defined, and there are one or two navigation platforms in each room of the house, so the user is able to move along all the house jumping between these predefined spots.
 
 <img src="https://user-images.githubusercontent.com/5633645/36345614-32e12ad4-140d-11e8-915e-077b14387e45.png" alt="home_2" style="max-width:100%" width="512" heigth="512">
 
@@ -44,7 +40,19 @@ For the Cardboard version, the navigation was implemented using little platforms
 
 ### 6 DOF
 
-***[TBD]*** For the HTC Vive version, the navigation will be implemented with teleportation. So using the Vive Controllers the user points to any position in the scene, press the trigger and automatically teleports to that location. This case implies more freedom as you can navigate the whole house without restrictions or pre-defined spots.
+For the hieh-end headsets version (scene "LivingRoom 6 DoF"), the navigation was implemented with different types of teleportation. The type of teleportation to be used can be selected through a menu that is triggered when pressing the grip buttons on the controllers. A little green sphere is shown at the left of each method indicating whether the option is active or not.
+
+IMAGEN!
+
+Teleport Points: this option implies that there will be many predefined spots which we can use to move through the scene, much similar to the 3 DoF case. Pressing the touchpad on the motion controllers an arc will be shown starting from the controller position. To teleport to one of the predefined spots just moving the arc above it and releasing the button press.
+
+IMAGEN!
+
+Free Teleporting: with this approach the user has more freedom to move as he can move anywhere in the scene without restrictions or pre-definied spots (except for unreachable places such as places behing walls, doors, etc). The way to teleport is very similar to the previous one, simply pressing the controller's touch pad to point to the position where we want to move and releasing the button press for triggering the teleportation.  sing the Vive Controllers the user points to any position in the scene, press the trigger and automatically teleports to that location.
+
+IMAGEN!
+
+Hybrid: both methods can be enabled at the same time.
 
 ## Interaction
 
@@ -82,3 +90,13 @@ The project can be run directly from the Editor as it includes a basic mouse-bas
 2.	Check OpenVR is selected in the Virtual Reality Supported list in the Rendering section of Player Settings (Edit > Project Settings > Other Settings > Rendering).
 3.	Check that the interaction method is the desired (fully gaze-based, gaze-based plus 2DUI and selection bar, or gaze-based plus 2DUI without selection bar). This can be selected in the Selection Radial script attached to the Main Camera component.
 4.	Build and Run.
+
+# Demo videos
+
+## 3 DOF
+
+https://www.youtube.com/watch?v=wGEwUGgWl5E
+
+## 6 DOF
+
+https://www.youtube.com/watch?v=jw8KjPF3hcQ
