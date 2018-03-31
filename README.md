@@ -44,31 +44,39 @@ For the hieh-end headsets version (scene "LivingRoom 6 DoF"), the navigation was
 
 IMAGEN!
 
-Teleport Points: this option implies that there will be many predefined spots which we can use to move through the scene, much similar to the 3 DoF case. Pressing the touchpad on the motion controllers an arc will be shown starting from the controller position. To teleport to one of the predefined spots just moving the arc above it and releasing the button press.
+**Teleport Points:** this option implies that there will be many predefined spots which we can use to move through the scene, much similar to the 3 DoF case. Pressing the touchpad on the motion controllers an arc will be shown starting from the controller position. To teleport to one of the predefined spots just moving the arc above it and releasing the button press.
 
 IMAGEN!
 
-Free Teleporting: with this approach the user has more freedom to move as he can move anywhere in the scene without restrictions or pre-definied spots (except for unreachable places such as places behing walls, doors, etc). The way to teleport is very similar to the previous one, simply pressing the controller's touch pad to point to the position where we want to move and releasing the button press for triggering the teleportation.  sing the Vive Controllers the user points to any position in the scene, press the trigger and automatically teleports to that location.
+**Free Teleporting:** with this approach the user has more freedom to move as he can move anywhere in the scene without restrictions or pre-definied spots (except for unreachable places such as places behing walls, doors, etc). The way to teleport is very similar to the previous one, simply pressing the controller's touch pad to point to the position where we want to move and releasing the button press for triggering the teleportation.  sing the Vive Controllers the user points to any position in the scene, press the trigger and automatically teleports to that location.
 
 IMAGEN!
 
-Hybrid: both methods can be enabled at the same time.
+**Hybrid:** both methods can be enabled at the same time.
 
 ## Interaction
 
 ### 3 DOF
 
-The plan was to have a subset of the objects in the scene which can be selected/manipulated (mainly objects above tables, the TV, the ceiling fan, etc. but not furniture, walls and other less natural objects to interacts with). For the Cardboard version, the selection and manipulation will be gaze-based. So you look to an object and, depending on the interaction method configured, the selection radial starts filing up and a little UI tooltip text will be shown indicating the action to be triggered. If it gets completely filled the object is selected and depending on the object a different action will be triggered (if it's a "grabable" object it will be shown near the user for a few seconds, if it's an interactible-only object it will trigger the associated action, for example, turning the TV on/off). The interaction is magical, as the user is selecting objects from the distance using just his gaze.
+There is a subset of the objects in the scene which can be selected/manipulated (mainly objects above tables, the TV, the ceiling fan, etc. but not furniture, walls and other less natural objects to interacts with). For the 3 DOF version, the selection and manipulation is fully gaze-based. So you look to an object and, depending on the interaction method configured, the selection radial starts filing up and a little UI tooltip text will be shown indicating the action to be triggered. If it gets completely filled the object is selected and depending on the object a different action will be triggered (if it's a "grabable" object it will be shown near the user for a few seconds, if it's an interactible-only object it will trigger the associated action, for example, turning the TV on/off). The interaction is kind of magical, as the user is selecting objects from the distance using just his gaze.
 
-The following interactions are supported so far (more will be supported for the final submission of this course):
+The following interactions are supported so far:
 
-1.	When selecting the ceiling fan, if turned off, it will start spinning. When powered on, if selected it will be turned off.
-2.	When selecting the TV, if turned off, it will be turned on and start showing some pre-loaded video. When powered on, if selected it will be turned off.
+1.	When selecting the ceiling fan, if turned off, it will start spinning. If selected when powered on it will be turned off.
+2.	When selecting the TV, if turned off, it will be turned on and start showing some pre-loaded video. If selected when powered on it will be turned off.
 3. When selecting any of the doors, it will be opened or closed accordingly.
 
 ### 6 DOF
 
-***[TBD]*** For the HTC Vive version, the selection and manipulation will be based on the use of the Vive Controllers. So to grab an object you just put your virtual hand near the object and press the trigger. In this line, for example, a book will be grabbed by the virtual hand until the user stops pressing the trigger, the TV will be turned on/off, and an exceptional case will be the ceiling fan, which will have a little rope hanging from the center you have to pull and it will start spinning (at least I'll try to implement it in that way :P). In this case the interactions will be fully natural, as the user will be interacting with the different objects in the same way he would do in the real world.
+In this case the selection and manipulation is be based on the use of motion controllers. So to grab an object you just put your virtual hand near the object and press the trigger. In this case the interactions will be fully natural, as the user will be interacting with the different objects in the same way he would do in the real world. 
+
+In this line, the following interactions are supported so far:
+
+1. Books, lamps and other small objects in the scene can be grabbed with the virtual hand by pressing the trigger. When the trigger is released the object grabbed will be released (you can throw it if released while moving the hand with some velocity).
+2. A useful object is the Universal Remote that can be found above the short table. After grabbing it you can point to different objects and press the touchpad button to interact with them. For example, the TV can be powered on/off, the fan can be powered on/off, and even some of the doors can be opened/closed using it. Now that's an universal remote! Check the video below this lines.
+3. Doors can be opened/closed by grabbing the handle by pulling the controller's trigger and moving the hand back or forth as you would do to open/close a real door.
+
+<a target="_blank" href="https://www.youtube.com/watch?v=jw8KjPF3hcQ"><img src="http://img.youtube.com/vi/jw8KjPF3hcQ/0.jpg" alt="Roll a Ball 3D" width="240" height="180" border="10" /></a>
 
 # How to run it
 
