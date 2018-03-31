@@ -42,15 +42,15 @@ For the Cardboard version (scene "LivingRoom 3 DoF"), the navigation was impleme
 
 For the hieh-end headsets version (scene "LivingRoom 6 DoF"), the navigation was implemented with different types of teleportation. The type of teleportation to be used can be selected through a menu that is triggered when pressing the grip buttons on the controllers. A little green sphere is shown at the left of each method indicating whether the option is active or not.
 
-IMAGEN!
+<img src="https://user-images.githubusercontent.com/5633645/38167809-f4f29cea-3512-11e8-9850-1e725466e2fc.png" alt="home_2" style="max-width:100%" width="512" heigth="512">
 
 **Teleport Points:** this option implies that there will be many predefined spots which we can use to move through the scene, much similar to the 3 DoF case. Pressing the touchpad on the motion controllers an arc will be shown starting from the controller position. To teleport to one of the predefined spots just moving the arc above it and releasing the button press.
 
-IMAGEN!
+<img src="https://user-images.githubusercontent.com/5633645/38167810-f7b7d26a-3512-11e8-903e-b2e8445da23e.png" alt="home_2" style="max-width:100%" width="512" heigth="512">
 
 **Free Teleporting:** with this approach the user has more freedom to move as he can move anywhere in the scene without restrictions or pre-definied spots (except for unreachable places such as places behing walls, doors, etc). The way to teleport is very similar to the previous one, simply pressing the controller's touch pad to point to the position where we want to move and releasing the button press for triggering the teleportation.  sing the Vive Controllers the user points to any position in the scene, press the trigger and automatically teleports to that location.
 
-IMAGEN!
+<img src="https://user-images.githubusercontent.com/5633645/38167811-fa1f85de-3512-11e8-9af9-f3078bd10176.png" alt="home_2" style="max-width:100%" width="512" heigth="512">
 
 **Hybrid:** both methods can be enabled at the same time.
 
