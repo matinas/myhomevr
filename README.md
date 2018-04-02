@@ -111,6 +111,6 @@ _Click on the image to open video_
 
 ## 6 DOF
 
-<a target="_blank" href="https://www.youtube.com/watch?v=jw8KjPF3hcQ"><img src="http://img.youtube.com/vi/jw8KjPF3hcQ/0.jpg" alt="Roll a Ball 3D" width="640" height="480" border="10" /></a>
+<a target="_blank" href="https://www.youtube.com/watch?v=DY-ipFc8uSQ"><img src="http://img.youtube.com/vi/DY-ipFc8uSQ/0.jpg" alt="Roll a Ball 3D" width="640" height="480" border="10" /></a>
 
 _Click on the image to open video_
