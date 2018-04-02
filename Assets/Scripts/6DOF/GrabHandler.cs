@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR.InteractionSystem;
 
+[RequireComponent(typeof(Interactable))]
 public class GrabHandler : MonoBehaviour {
 
 	private bool isGrabbing;
@@ -14,9 +15,10 @@ public class GrabHandler : MonoBehaviour {
 
 	private Hand attachedHand;
 
+	[RangeAttribute(0.0f,1.0f)]
 	public float animTime = 0.8f;
 
-	private float nPos, last_t_anim = 0.0f;
+	private float nPos, lastNPos = 0.0f;
 
 	// Use this for initialization
 	void Awake ()
@@ -24,27 +26,40 @@ public class GrabHandler : MonoBehaviour {
 		anim = gameObject.GetComponentInParent<Animator>();
 	}
 	
+	// FIXME: This is not working 100% fine yet. There is a little jumpliness when we grab the handle
+	// pull it a bit, release it and try to grab and pull it again. I guess the jump in the animation
+	// is due to the sign chance in the vector substraction below (jump happens when diff is near zero,
+	// i.e.: when you have just grabbed the handle the second time)
+
 	void Update()
 	{
 		if (isGrabbing)
 		{
-			// Vector3 diff = grabPos - attachedHand.transform.localPosition;
-			// nPos =  diff.magnitude * Mathf.Sign(Vector3.Dot(diff,attachedHand.transform.right));
-
-			Debug.Log("New Hand Position: " + attachedHand.transform.localPosition.x);
-			float diff = attachedHand.transform.localPosition.x - grabPos.x;
-			Debug.Log("Diff: " + diff);
-			float t_anim = Mathf.Clamp01((last_t_anim+diff)*animTime);
-
-			Debug.Log("Se va a setear la animacion en " + t_anim + " , npos: " + nPos + "last_t_anim: " + last_t_anim);
-			anim.SetFloat("Door",t_anim);
-
-			if (attachedHand.GetStandardInteractionButtonUp())
+			if (attachedHand != null)
 			{
-				Debug.Log("Door handle trigger released");
+				Vector3 diff = attachedHand.transform.position - grabPos;
+				nPos = diff.magnitude * Mathf.Sign(Vector3.Dot(diff,attachedHand.transform.forward));
 
-				isGrabbing = false;
-				last_t_anim = t_anim;
+				// Debug.Log("Grab Position: " + grabPos);
+				// Debug.Log("New Hand Position: " + attachedHand.transform.position);
+				// Debug.Log("Diff: " + diff.ToString("F6") + ", magnitude: " + diff.magnitude);
+
+				nPos = Mathf.Clamp01(lastNPos+nPos);
+				anim.SetFloat("Door",nPos);
+				
+				// Debug.Log("nPos:" + nPos);
+
+				if (attachedHand.GetStandardInteractionButtonUp())
+				{
+					Debug.Log("Door handle trigger released");
+
+					isGrabbing = false;
+					lastNPos = nPos;
+				}
+			}
+			else
+			{
+				anim.SetFloat("Door",animTime); // Just for debug when no hand is attached
 			}
 		}
 	}
@@ -62,8 +77,8 @@ public class GrabHandler : MonoBehaviour {
 			{
 				Debug.Log("Door handler trigger pressed");
 				{
-					grabPos = attachedHand.transform.localPosition;
-					Debug.Log("New Grab Position: " + grabPos.x);
+					grabPos = attachedHand.transform.position;
+					Debug.Log("New Grab Position: " + grabPos);
 					isGrabbing = true;
 				}
 			}
