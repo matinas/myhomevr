@@ -7,8 +7,6 @@ using Valve.VR.InteractionSystem;
 [RequireComponent(typeof(Interactable))]
 public class GrabHandler : MonoBehaviour {
 
-	private bool isGrabbing;
-
 	private Animator anim;
 
 	private Vector3 grabPos;
@@ -31,36 +29,21 @@ public class GrabHandler : MonoBehaviour {
 	// is due to the sign chance in the vector substraction below (jump happens when diff is near zero,
 	// i.e.: when you have just grabbed the handle the second time)
 
+	// NOTE: the behavior expected for this script was substituted by using the LinearDrive and
+	// LinearMapping scripts from the Interaction System of SteamVR to handle the mapping between
+	// hand movement and the door animation.
+
+	// In CalculateLinearMapping() of LinearDrive what they are doing is just projecting the controller movement
+	// vector to the normalized direction vector to get the length of the vector (that's the lineal mapping basically).
+	// "When normalizing a vector you are making its length 1 - finding the unit vector that points in the same direction.
+	// This is useful for various purposes, for example, if you take the dot product of a vector with a unit vector you
+	// have the length of the component of that vector in the direction of the unit vector"
+
 	void Update()
 	{
-		if (isGrabbing)
+		if (attachedHand == null)
 		{
-			if (attachedHand != null)
-			{
-				Vector3 diff = attachedHand.transform.position - grabPos;
-				nPos = diff.magnitude * Mathf.Sign(Vector3.Dot(diff,attachedHand.transform.forward));
-
-				// Debug.Log("Grab Position: " + grabPos);
-				// Debug.Log("New Hand Position: " + attachedHand.transform.position);
-				// Debug.Log("Diff: " + diff.ToString("F6") + ", magnitude: " + diff.magnitude);
-
-				nPos = Mathf.Clamp01(lastNPos+nPos);
-				anim.SetFloat("Door",nPos);
-				
-				// Debug.Log("nPos:" + nPos);
-
-				if (attachedHand.GetStandardInteractionButtonUp())
-				{
-					Debug.Log("Door handle trigger released");
-
-					isGrabbing = false;
-					lastNPos = nPos;
-				}
-			}
-			else
-			{
-				anim.SetFloat("Door",animTime); // Just for debug when no hand is attached
-			}
+			anim.SetFloat("Door",animTime); // Just for debug when no hand is attached
 		}
 	}
 
@@ -71,7 +54,7 @@ public class GrabHandler : MonoBehaviour {
 
 	void HandHoverUpdate(Hand hand)
 	{
-		if (!isGrabbing)
+		if (!hand.hoverLocked)
 		{
 			if (hand.GetStandardInteractionButtonDown())
 			{
@@ -79,15 +62,33 @@ public class GrabHandler : MonoBehaviour {
 				{
 					grabPos = attachedHand.transform.position;
 					Debug.Log("New Grab Position: " + grabPos);
-					isGrabbing = true;
 				}
+
+				hand.HoverLock(GetComponent<Interactable>());
 			}
 		}
-	}
+		else
+		{
+			Vector3 diff = attachedHand.transform.position - grabPos;
+			nPos = diff.magnitude * Mathf.Sign(Vector3.Dot(diff.normalized,attachedHand.transform.forward));
 
-	void OnHandHoverEnd(Hand hand)
-	{
-		if (isGrabbing)
-			Debug.Log("The hand isn't colliding anymore but we are still grabbing");
+			// Debug.Log("Grab Position: " + grabPos);
+			// Debug.Log("New Hand Position: " + attachedHand.transform.position);
+			// Debug.Log("Diff: " + diff.ToString("F6") + ", magnitude: " + diff.magnitude);
+
+			nPos = Mathf.Clamp01(lastNPos+nPos);
+			anim.SetFloat("Door",nPos);
+			
+			// Debug.Log("nPos:" + nPos);
+
+			if (attachedHand.GetStandardInteractionButtonUp())
+			{
+				Debug.Log("Door handle trigger released");
+
+				lastNPos = nPos;
+
+				hand.HoverUnlock(GetComponent<Interactable>());
+			}
+		}
 	}
 }
