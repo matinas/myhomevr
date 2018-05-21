@@ -139,7 +139,9 @@ ModelImporter:
     400130: world_root
     7400000: human_talk_agressive
     7400002: human_talk_friendly
-    7400004: my_talking
+    7400004: my_talking_1
+    7400006: my_talking_2
+    7400008: my_talking_3
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -332,10 +334,10 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: my_talking
+      name: my_talking_1
       takeName: human_talk_friendly
       firstFrame: 0
-      lastFrame: 361
+      lastFrame: 241
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -343,6 +345,326 @@ ModelImporter:
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Male_Warrior_Reference
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_LeftUpLeg
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_LeftUpLeg/Male_Warrior_LeftLeg
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_LeftUpLeg/Male_Warrior_LeftLeg/Male_Warrior_LeftFoot
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_LeftUpLeg/Male_Warrior_LeftLeg/Male_Warrior_LeftFoot/Male_Warrior_LeftToeBase
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_RightUpLeg
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_RightUpLeg/Male_Warrior_RightLeg
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_RightUpLeg/Male_Warrior_RightLeg/Male_Warrior_RightFoot
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_RightUpLeg/Male_Warrior_RightLeg/Male_Warrior_RightFoot/Male_Warrior_RightToeBase
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_LeftShoulder
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_LeftShoulder/Male_Warrior_LeftArm
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_LeftShoulder/Male_Warrior_LeftArm/Male_Warrior_LeftForeArm
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_LeftShoulder/Male_Warrior_LeftArm/Male_Warrior_LeftForeArm/Male_Warrior_LeftHand
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_LeftShoulder/Male_Warrior_LeftArm/Male_Warrior_LeftForeArm/Male_Warrior_LeftHand/Male_Warrior_LeftHandIndex1
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_LeftShoulder/Male_Warrior_LeftArm/Male_Warrior_LeftForeArm/Male_Warrior_LeftHand/Male_Warrior_LeftHandIndex1/Male_Warrior_LeftHandIndex2
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_LeftShoulder/Male_Warrior_LeftArm/Male_Warrior_LeftForeArm/Male_Warrior_LeftHand/Male_Warrior_LeftHandIndex1/Male_Warrior_LeftHandIndex2/Male_Warrior_LeftHandIndex3
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_LeftShoulder/Male_Warrior_LeftArm/Male_Warrior_LeftForeArm/Male_Warrior_LeftHand/Male_Warrior_LeftHandIndex1/Male_Warrior_LeftHandIndex2/Male_Warrior_LeftHandIndex3/Male_Warrior_LeftHandIndex4
+        weight: 0
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_LeftShoulder/Male_Warrior_LeftArm/Male_Warrior_LeftForeArm/Male_Warrior_LeftHand/Male_Warrior_LeftHandMiddle1
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_LeftShoulder/Male_Warrior_LeftArm/Male_Warrior_LeftForeArm/Male_Warrior_LeftHand/Male_Warrior_LeftHandMiddle1/Male_Warrior_LeftHandMiddle2
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_LeftShoulder/Male_Warrior_LeftArm/Male_Warrior_LeftForeArm/Male_Warrior_LeftHand/Male_Warrior_LeftHandMiddle1/Male_Warrior_LeftHandMiddle2/Male_Warrior_LeftHandMiddle3
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_LeftShoulder/Male_Warrior_LeftArm/Male_Warrior_LeftForeArm/Male_Warrior_LeftHand/Male_Warrior_LeftHandMiddle1/Male_Warrior_LeftHandMiddle2/Male_Warrior_LeftHandMiddle3/Male_Warrior_LeftHandMiddle4
+        weight: 0
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_LeftShoulder/Male_Warrior_LeftArm/Male_Warrior_LeftForeArm/Male_Warrior_LeftHand/Male_Warrior_LeftHandPinky1
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_LeftShoulder/Male_Warrior_LeftArm/Male_Warrior_LeftForeArm/Male_Warrior_LeftHand/Male_Warrior_LeftHandPinky1/Male_Warrior_LeftHandPinky2
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_LeftShoulder/Male_Warrior_LeftArm/Male_Warrior_LeftForeArm/Male_Warrior_LeftHand/Male_Warrior_LeftHandPinky1/Male_Warrior_LeftHandPinky2/Male_Warrior_LeftHandPinky3
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_LeftShoulder/Male_Warrior_LeftArm/Male_Warrior_LeftForeArm/Male_Warrior_LeftHand/Male_Warrior_LeftHandPinky1/Male_Warrior_LeftHandPinky2/Male_Warrior_LeftHandPinky3/Male_Warrior_LeftHandPinky4
+        weight: 0
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_LeftShoulder/Male_Warrior_LeftArm/Male_Warrior_LeftForeArm/Male_Warrior_LeftHand/Male_Warrior_LeftHandRing1
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_LeftShoulder/Male_Warrior_LeftArm/Male_Warrior_LeftForeArm/Male_Warrior_LeftHand/Male_Warrior_LeftHandRing1/Male_Warrior_LeftHandRing2
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_LeftShoulder/Male_Warrior_LeftArm/Male_Warrior_LeftForeArm/Male_Warrior_LeftHand/Male_Warrior_LeftHandRing1/Male_Warrior_LeftHandRing2/Male_Warrior_LeftHandRing3
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_LeftShoulder/Male_Warrior_LeftArm/Male_Warrior_LeftForeArm/Male_Warrior_LeftHand/Male_Warrior_LeftHandRing1/Male_Warrior_LeftHandRing2/Male_Warrior_LeftHandRing3/Male_Warrior_LeftHandRing4
+        weight: 0
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_LeftShoulder/Male_Warrior_LeftArm/Male_Warrior_LeftForeArm/Male_Warrior_LeftHand/Male_Warrior_LeftHandThumb1
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_LeftShoulder/Male_Warrior_LeftArm/Male_Warrior_LeftForeArm/Male_Warrior_LeftHand/Male_Warrior_LeftHandThumb1/Male_Warrior_LeftHandThumb2
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_LeftShoulder/Male_Warrior_LeftArm/Male_Warrior_LeftForeArm/Male_Warrior_LeftHand/Male_Warrior_LeftHandThumb1/Male_Warrior_LeftHandThumb2/Male_Warrior_LeftHandThumb3
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_LeftShoulder/Male_Warrior_LeftArm/Male_Warrior_LeftForeArm/Male_Warrior_LeftHand/Male_Warrior_LeftHandThumb1/Male_Warrior_LeftHandThumb2/Male_Warrior_LeftHandThumb3/Male_Warrior_LeftHandThumb4
+        weight: 0
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_Neck
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_Neck/Male_Warrior_Head
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_RightShoulder
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_RightShoulder/Male_Warrior_RightArm
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_RightShoulder/Male_Warrior_RightArm/Male_Warrior_RightForeArm
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_RightShoulder/Male_Warrior_RightArm/Male_Warrior_RightForeArm/Male_Warrior_RightHand
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_RightShoulder/Male_Warrior_RightArm/Male_Warrior_RightForeArm/Male_Warrior_RightHand/j_weapon
+        weight: 0
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_RightShoulder/Male_Warrior_RightArm/Male_Warrior_RightForeArm/Male_Warrior_RightHand/Male_Warrior_RightHandIndex1
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_RightShoulder/Male_Warrior_RightArm/Male_Warrior_RightForeArm/Male_Warrior_RightHand/Male_Warrior_RightHandIndex1/Male_Warrior_RightHandIndex2
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_RightShoulder/Male_Warrior_RightArm/Male_Warrior_RightForeArm/Male_Warrior_RightHand/Male_Warrior_RightHandIndex1/Male_Warrior_RightHandIndex2/Male_Warrior_RightHandIndex3
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_RightShoulder/Male_Warrior_RightArm/Male_Warrior_RightForeArm/Male_Warrior_RightHand/Male_Warrior_RightHandIndex1/Male_Warrior_RightHandIndex2/Male_Warrior_RightHandIndex3/Male_Warrior_RightHandIndex4
+        weight: 0
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_RightShoulder/Male_Warrior_RightArm/Male_Warrior_RightForeArm/Male_Warrior_RightHand/Male_Warrior_RightHandMiddle1
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_RightShoulder/Male_Warrior_RightArm/Male_Warrior_RightForeArm/Male_Warrior_RightHand/Male_Warrior_RightHandMiddle1/Male_Warrior_RightHandMiddle2
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_RightShoulder/Male_Warrior_RightArm/Male_Warrior_RightForeArm/Male_Warrior_RightHand/Male_Warrior_RightHandMiddle1/Male_Warrior_RightHandMiddle2/Male_Warrior_RightHandMiddle3
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_RightShoulder/Male_Warrior_RightArm/Male_Warrior_RightForeArm/Male_Warrior_RightHand/Male_Warrior_RightHandMiddle1/Male_Warrior_RightHandMiddle2/Male_Warrior_RightHandMiddle3/Male_Warrior_RightHandMiddle4
+        weight: 0
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_RightShoulder/Male_Warrior_RightArm/Male_Warrior_RightForeArm/Male_Warrior_RightHand/Male_Warrior_RightHandPinky1
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_RightShoulder/Male_Warrior_RightArm/Male_Warrior_RightForeArm/Male_Warrior_RightHand/Male_Warrior_RightHandPinky1/Male_Warrior_RightHandPinky2
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_RightShoulder/Male_Warrior_RightArm/Male_Warrior_RightForeArm/Male_Warrior_RightHand/Male_Warrior_RightHandPinky1/Male_Warrior_RightHandPinky2/Male_Warrior_RightHandPinky3
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_RightShoulder/Male_Warrior_RightArm/Male_Warrior_RightForeArm/Male_Warrior_RightHand/Male_Warrior_RightHandPinky1/Male_Warrior_RightHandPinky2/Male_Warrior_RightHandPinky3/Male_Warrior_RightHandPinky4
+        weight: 0
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_RightShoulder/Male_Warrior_RightArm/Male_Warrior_RightForeArm/Male_Warrior_RightHand/Male_Warrior_RightHandRing1
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_RightShoulder/Male_Warrior_RightArm/Male_Warrior_RightForeArm/Male_Warrior_RightHand/Male_Warrior_RightHandRing1/Male_Warrior_RightHandRing2
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_RightShoulder/Male_Warrior_RightArm/Male_Warrior_RightForeArm/Male_Warrior_RightHand/Male_Warrior_RightHandRing1/Male_Warrior_RightHandRing2/Male_Warrior_RightHandRing3
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_RightShoulder/Male_Warrior_RightArm/Male_Warrior_RightForeArm/Male_Warrior_RightHand/Male_Warrior_RightHandRing1/Male_Warrior_RightHandRing2/Male_Warrior_RightHandRing3/Male_Warrior_RightHandRing4
+        weight: 0
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_RightShoulder/Male_Warrior_RightArm/Male_Warrior_RightForeArm/Male_Warrior_RightHand/Male_Warrior_RightHandThumb1
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_RightShoulder/Male_Warrior_RightArm/Male_Warrior_RightForeArm/Male_Warrior_RightHand/Male_Warrior_RightHandThumb1/Male_Warrior_RightHandThumb2
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_RightShoulder/Male_Warrior_RightArm/Male_Warrior_RightForeArm/Male_Warrior_RightHand/Male_Warrior_RightHandThumb1/Male_Warrior_RightHandThumb2/Male_Warrior_RightHandThumb3
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_RightShoulder/Male_Warrior_RightArm/Male_Warrior_RightForeArm/Male_Warrior_RightHand/Male_Warrior_RightHandThumb1/Male_Warrior_RightHandThumb2/Male_Warrior_RightHandThumb3/Male_Warrior_RightHandThumb4
+        weight: 0
+      - path: world_root
+        weight: 0
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: my_talking_2
+      takeName: human_talk_friendly
+      firstFrame: 162
+      lastFrame: 251
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Male_Warrior_Reference
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_LeftUpLeg
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_LeftUpLeg/Male_Warrior_LeftLeg
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_LeftUpLeg/Male_Warrior_LeftLeg/Male_Warrior_LeftFoot
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_LeftUpLeg/Male_Warrior_LeftLeg/Male_Warrior_LeftFoot/Male_Warrior_LeftToeBase
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_RightUpLeg
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_RightUpLeg/Male_Warrior_RightLeg
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_RightUpLeg/Male_Warrior_RightLeg/Male_Warrior_RightFoot
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_RightUpLeg/Male_Warrior_RightLeg/Male_Warrior_RightFoot/Male_Warrior_RightToeBase
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_LeftShoulder
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_LeftShoulder/Male_Warrior_LeftArm
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_LeftShoulder/Male_Warrior_LeftArm/Male_Warrior_LeftForeArm
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_LeftShoulder/Male_Warrior_LeftArm/Male_Warrior_LeftForeArm/Male_Warrior_LeftHand
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_LeftShoulder/Male_Warrior_LeftArm/Male_Warrior_LeftForeArm/Male_Warrior_LeftHand/Male_Warrior_LeftHandIndex1
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_LeftShoulder/Male_Warrior_LeftArm/Male_Warrior_LeftForeArm/Male_Warrior_LeftHand/Male_Warrior_LeftHandIndex1/Male_Warrior_LeftHandIndex2
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_LeftShoulder/Male_Warrior_LeftArm/Male_Warrior_LeftForeArm/Male_Warrior_LeftHand/Male_Warrior_LeftHandIndex1/Male_Warrior_LeftHandIndex2/Male_Warrior_LeftHandIndex3
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_LeftShoulder/Male_Warrior_LeftArm/Male_Warrior_LeftForeArm/Male_Warrior_LeftHand/Male_Warrior_LeftHandIndex1/Male_Warrior_LeftHandIndex2/Male_Warrior_LeftHandIndex3/Male_Warrior_LeftHandIndex4
+        weight: 0
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_LeftShoulder/Male_Warrior_LeftArm/Male_Warrior_LeftForeArm/Male_Warrior_LeftHand/Male_Warrior_LeftHandMiddle1
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_LeftShoulder/Male_Warrior_LeftArm/Male_Warrior_LeftForeArm/Male_Warrior_LeftHand/Male_Warrior_LeftHandMiddle1/Male_Warrior_LeftHandMiddle2
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_LeftShoulder/Male_Warrior_LeftArm/Male_Warrior_LeftForeArm/Male_Warrior_LeftHand/Male_Warrior_LeftHandMiddle1/Male_Warrior_LeftHandMiddle2/Male_Warrior_LeftHandMiddle3
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_LeftShoulder/Male_Warrior_LeftArm/Male_Warrior_LeftForeArm/Male_Warrior_LeftHand/Male_Warrior_LeftHandMiddle1/Male_Warrior_LeftHandMiddle2/Male_Warrior_LeftHandMiddle3/Male_Warrior_LeftHandMiddle4
+        weight: 0
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_LeftShoulder/Male_Warrior_LeftArm/Male_Warrior_LeftForeArm/Male_Warrior_LeftHand/Male_Warrior_LeftHandPinky1
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_LeftShoulder/Male_Warrior_LeftArm/Male_Warrior_LeftForeArm/Male_Warrior_LeftHand/Male_Warrior_LeftHandPinky1/Male_Warrior_LeftHandPinky2
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_LeftShoulder/Male_Warrior_LeftArm/Male_Warrior_LeftForeArm/Male_Warrior_LeftHand/Male_Warrior_LeftHandPinky1/Male_Warrior_LeftHandPinky2/Male_Warrior_LeftHandPinky3
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_LeftShoulder/Male_Warrior_LeftArm/Male_Warrior_LeftForeArm/Male_Warrior_LeftHand/Male_Warrior_LeftHandPinky1/Male_Warrior_LeftHandPinky2/Male_Warrior_LeftHandPinky3/Male_Warrior_LeftHandPinky4
+        weight: 0
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_LeftShoulder/Male_Warrior_LeftArm/Male_Warrior_LeftForeArm/Male_Warrior_LeftHand/Male_Warrior_LeftHandRing1
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_LeftShoulder/Male_Warrior_LeftArm/Male_Warrior_LeftForeArm/Male_Warrior_LeftHand/Male_Warrior_LeftHandRing1/Male_Warrior_LeftHandRing2
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_LeftShoulder/Male_Warrior_LeftArm/Male_Warrior_LeftForeArm/Male_Warrior_LeftHand/Male_Warrior_LeftHandRing1/Male_Warrior_LeftHandRing2/Male_Warrior_LeftHandRing3
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_LeftShoulder/Male_Warrior_LeftArm/Male_Warrior_LeftForeArm/Male_Warrior_LeftHand/Male_Warrior_LeftHandRing1/Male_Warrior_LeftHandRing2/Male_Warrior_LeftHandRing3/Male_Warrior_LeftHandRing4
+        weight: 0
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_LeftShoulder/Male_Warrior_LeftArm/Male_Warrior_LeftForeArm/Male_Warrior_LeftHand/Male_Warrior_LeftHandThumb1
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_LeftShoulder/Male_Warrior_LeftArm/Male_Warrior_LeftForeArm/Male_Warrior_LeftHand/Male_Warrior_LeftHandThumb1/Male_Warrior_LeftHandThumb2
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_LeftShoulder/Male_Warrior_LeftArm/Male_Warrior_LeftForeArm/Male_Warrior_LeftHand/Male_Warrior_LeftHandThumb1/Male_Warrior_LeftHandThumb2/Male_Warrior_LeftHandThumb3
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_LeftShoulder/Male_Warrior_LeftArm/Male_Warrior_LeftForeArm/Male_Warrior_LeftHand/Male_Warrior_LeftHandThumb1/Male_Warrior_LeftHandThumb2/Male_Warrior_LeftHandThumb3/Male_Warrior_LeftHandThumb4
+        weight: 0
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_Neck
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_Neck/Male_Warrior_Head
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_RightShoulder
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_RightShoulder/Male_Warrior_RightArm
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_RightShoulder/Male_Warrior_RightArm/Male_Warrior_RightForeArm
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_RightShoulder/Male_Warrior_RightArm/Male_Warrior_RightForeArm/Male_Warrior_RightHand
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_RightShoulder/Male_Warrior_RightArm/Male_Warrior_RightForeArm/Male_Warrior_RightHand/j_weapon
+        weight: 0
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_RightShoulder/Male_Warrior_RightArm/Male_Warrior_RightForeArm/Male_Warrior_RightHand/Male_Warrior_RightHandIndex1
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_RightShoulder/Male_Warrior_RightArm/Male_Warrior_RightForeArm/Male_Warrior_RightHand/Male_Warrior_RightHandIndex1/Male_Warrior_RightHandIndex2
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_RightShoulder/Male_Warrior_RightArm/Male_Warrior_RightForeArm/Male_Warrior_RightHand/Male_Warrior_RightHandIndex1/Male_Warrior_RightHandIndex2/Male_Warrior_RightHandIndex3
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_RightShoulder/Male_Warrior_RightArm/Male_Warrior_RightForeArm/Male_Warrior_RightHand/Male_Warrior_RightHandIndex1/Male_Warrior_RightHandIndex2/Male_Warrior_RightHandIndex3/Male_Warrior_RightHandIndex4
+        weight: 0
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_RightShoulder/Male_Warrior_RightArm/Male_Warrior_RightForeArm/Male_Warrior_RightHand/Male_Warrior_RightHandMiddle1
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_RightShoulder/Male_Warrior_RightArm/Male_Warrior_RightForeArm/Male_Warrior_RightHand/Male_Warrior_RightHandMiddle1/Male_Warrior_RightHandMiddle2
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_RightShoulder/Male_Warrior_RightArm/Male_Warrior_RightForeArm/Male_Warrior_RightHand/Male_Warrior_RightHandMiddle1/Male_Warrior_RightHandMiddle2/Male_Warrior_RightHandMiddle3
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_RightShoulder/Male_Warrior_RightArm/Male_Warrior_RightForeArm/Male_Warrior_RightHand/Male_Warrior_RightHandMiddle1/Male_Warrior_RightHandMiddle2/Male_Warrior_RightHandMiddle3/Male_Warrior_RightHandMiddle4
+        weight: 0
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_RightShoulder/Male_Warrior_RightArm/Male_Warrior_RightForeArm/Male_Warrior_RightHand/Male_Warrior_RightHandPinky1
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_RightShoulder/Male_Warrior_RightArm/Male_Warrior_RightForeArm/Male_Warrior_RightHand/Male_Warrior_RightHandPinky1/Male_Warrior_RightHandPinky2
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_RightShoulder/Male_Warrior_RightArm/Male_Warrior_RightForeArm/Male_Warrior_RightHand/Male_Warrior_RightHandPinky1/Male_Warrior_RightHandPinky2/Male_Warrior_RightHandPinky3
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_RightShoulder/Male_Warrior_RightArm/Male_Warrior_RightForeArm/Male_Warrior_RightHand/Male_Warrior_RightHandPinky1/Male_Warrior_RightHandPinky2/Male_Warrior_RightHandPinky3/Male_Warrior_RightHandPinky4
+        weight: 0
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_RightShoulder/Male_Warrior_RightArm/Male_Warrior_RightForeArm/Male_Warrior_RightHand/Male_Warrior_RightHandRing1
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_RightShoulder/Male_Warrior_RightArm/Male_Warrior_RightForeArm/Male_Warrior_RightHand/Male_Warrior_RightHandRing1/Male_Warrior_RightHandRing2
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_RightShoulder/Male_Warrior_RightArm/Male_Warrior_RightForeArm/Male_Warrior_RightHand/Male_Warrior_RightHandRing1/Male_Warrior_RightHandRing2/Male_Warrior_RightHandRing3
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_RightShoulder/Male_Warrior_RightArm/Male_Warrior_RightForeArm/Male_Warrior_RightHand/Male_Warrior_RightHandRing1/Male_Warrior_RightHandRing2/Male_Warrior_RightHandRing3/Male_Warrior_RightHandRing4
+        weight: 0
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_RightShoulder/Male_Warrior_RightArm/Male_Warrior_RightForeArm/Male_Warrior_RightHand/Male_Warrior_RightHandThumb1
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_RightShoulder/Male_Warrior_RightArm/Male_Warrior_RightForeArm/Male_Warrior_RightHand/Male_Warrior_RightHandThumb1/Male_Warrior_RightHandThumb2
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_RightShoulder/Male_Warrior_RightArm/Male_Warrior_RightForeArm/Male_Warrior_RightHand/Male_Warrior_RightHandThumb1/Male_Warrior_RightHandThumb2/Male_Warrior_RightHandThumb3
+        weight: 1
+      - path: Male_Warrior_Reference/Male_Warrior_Hips/Male_Warrior_Spine/Male_Warrior_Spine1/Male_Warrior_Spine2/Male_Warrior_RightShoulder/Male_Warrior_RightArm/Male_Warrior_RightForeArm/Male_Warrior_RightHand/Male_Warrior_RightHandThumb1/Male_Warrior_RightHandThumb2/Male_Warrior_RightHandThumb3/Male_Warrior_RightHandThumb4
+        weight: 0
+      - path: world_root
+        weight: 0
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: my_talking_3
+      takeName: human_talk_friendly
+      firstFrame: 73
+      lastFrame: 133
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
