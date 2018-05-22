@@ -3,6 +3,8 @@ A little Unity VR scene representing my real house made from scratch. It can be 
 
 The vast of the actual assets were taken from the [Simple Home Stuff](https://www.assetstore.unity3d.com/en/#!/content/69129) free asset as well as a few additional free doors pulled from Turbosquid. Beyond those, there are a few objects I've done myself using simple Unity primitives (mainly cubes and cylinders) such as the rounded table at the left of the room, the moving ceiling fan hanging from the center of the living room, and all the general house layout (walls, floor, etc).
 
+The included virtual character used is the one from the [MORHP3D Male](https://assetstore.unity.com/packages/3d/characters/humanoids/mcs-male-45805) package pulled directly from the Unity Assets Store
+
    <img src="https://user-images.githubusercontent.com/5633645/35434575-6ba491d4-0266-11e8-8a86-1daa752a1b7a.png" alt="home_1" style="max-width:100%" width="1048" heigth="664">
    <img src="https://user-images.githubusercontent.com/5633645/35844812-26e62b58-0aee-11e8-8d10-4e04edef5f55.png" alt="home_1" style="max-width:100%" width="1048" heigth="664">   
    <img src="https://user-images.githubusercontent.com/5633645/36345596-99eef608-140c-11e8-90e6-bd9cb90fc1b9.png" alt="home_2" style="max-width:100%" width="512" heigth="512">
@@ -10,6 +12,7 @@ The vast of the actual assets were taken from the [Simple Home Stuff](https://ww
 
 ## A bit more information
 
+- _Animated Virtual Character_: the included virtual character is interactive, being possible to talk with him and answer his questions by nodding or shaking our head.
 - _Materials and Textures_: the floor has a material which has a parquet texture associated and the corresponding normal map so to achieve some roughness in parquet's wood. Also the walls, the ceiling and the objects from the Simple Home Stuff package has their own material. All of the materials uses the Standard shader to render the object though.
 - _Scale_: I've tried the scale both in Google Cardboard and HTC Vive and the room and all the objects seems to be pretty much life-size. Furthermore, to define the camera position to be used in the mobile VR headset I used the HTC Vive tracking as a helper, so to hardcode a real world camera position which corresponds to my height (after headset donned).
 - _Lighting_: : I added a few point lights, two on the room's ceiling , another one on the floor lamp near the two-folded door, one in the main corridor and one in each of the rooms. Take into account that some of them are not well perceived when using mobile VR due to the graphics optimizations Unity does to get it to work efficiently.
@@ -40,7 +43,7 @@ For the Cardboard version (scene "LivingRoom 3 DoF"), the navigation was impleme
 
 ### 6 DOF
 
-For the hieh-end headsets version (scene "LivingRoom 6 DoF"), the navigation was implemented with different types of teleportation. The type of teleportation to be used can be selected through a menu that is triggered when pressing the grip buttons on the controllers. A little green sphere is shown at the left of each method indicating whether the option is active or not.
+For the high-end headsets version (scene "LivingRoom 6 DoF"), the navigation was implemented with different types of teleportation. The type of teleportation to be used can be selected through a menu that is triggered when pressing the grip buttons on the controllers. A little green sphere is shown at the left of each method indicating whether the option is active or not.
 
 <img src="https://user-images.githubusercontent.com/5633645/38167809-f4f29cea-3512-11e8-9850-1e725466e2fc.png" alt="home_2" style="max-width:100%" width="512" heigth="512">
 
@@ -48,13 +51,13 @@ For the hieh-end headsets version (scene "LivingRoom 6 DoF"), the navigation was
 
 <img src="https://user-images.githubusercontent.com/5633645/38167810-f7b7d26a-3512-11e8-903e-b2e8445da23e.png" alt="home_2" style="max-width:100%" width="512" heigth="512">
 
-**Free Teleporting:** with this approach the user has more freedom to move as he can move anywhere in the scene without restrictions or pre-definied spots (except for unreachable places such as places behing walls, doors, etc). The way to teleport is very similar to the previous one, simply pressing the controller's touch pad to point to the position where we want to move and releasing the button press for triggering the teleportation.  sing the Vive Controllers the user points to any position in the scene, press the trigger and automatically teleports to that location.
+**Free Teleporting:** with this approach the user has more freedom to move as he can move anywhere in the scene without restrictions or pre-defined spots (except for unreachable places such as places behing walls, doors, etc). The way to teleport is very similar to the previous one, simply pressing the controller's touch pad to point to the position where we want to move and releasing the button press for triggering the teleportation.  sing the Vive Controllers the user points to any position in the scene, press the trigger and automatically teleports to that location.
 
 <img src="https://user-images.githubusercontent.com/5633645/38167811-fa1f85de-3512-11e8-9af9-f3078bd10176.png" alt="home_2" style="max-width:100%" width="512" heigth="512">
 
 **Hybrid:** both methods can be enabled at the same time.
 
-## Interaction
+## Interaction - Objects
 
 ### 3 DOF
 
@@ -68,7 +71,7 @@ The following interactions are supported so far:
 
 ### 6 DOF
 
-In this case the selection and manipulation is be based on the use of motion controllers. So to grab an object you just put your virtual hand near the object and press the trigger. In this case the interactions will be fully natural, as the user will be interacting with the different objects in the same way he would do in the real world. 
+In this case the selection and manipulation is based on the use of motion controllers. So to grab an object you just put your virtual hand near the object and press the trigger. In this case the interactions will be fully natural, as the user will be interacting with the different objects in the same way he would do in the real world. 
 
 In this line, the following interactions are supported so far:
 
@@ -79,6 +82,12 @@ In this line, the following interactions are supported so far:
 <a target="_blank" href="https://www.youtube.com/watch?v=jw8KjPF3hcQ"><img src="http://img.youtube.com/vi/jw8KjPF3hcQ/0.jpg" alt="Roll a Ball 3D" width="320" height="240" border="10" /></a>
 
 _Click on the image to open video_
+
+## Interaction - Virtual characters
+
+The interaction with virtual characters is implemented only in the 3DOF version of the application (scene "Living Room 3 DoF"). There is an interactive virtual character in the house's living room, which once you start talking he will start listening, and as soon as you stop talking he will ask you some questions. To answer to questions you can nod (YES) or shake (NO) your head (i.e.: quickly move your head up and down, or left and right, respectively).
+
+<img src="https://user-images.githubusercontent.com/5633645/40335776-e51ea47a-5d3b-11e8-98d2-fb0469d49d68.png" alt="virtual character" style="max-width:100%" width="512" heigth="512">
 
 # How to run it
 
