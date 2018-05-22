@@ -3,7 +3,7 @@ A little Unity VR scene representing my real house made from scratch. It can be 
 
 The vast of the actual assets were taken from the [Simple Home Stuff](https://www.assetstore.unity3d.com/en/#!/content/69129) free asset as well as a few additional free doors pulled from Turbosquid. Beyond those, there are a few objects I've done myself using simple Unity primitives (mainly cubes and cylinders) such as the rounded table at the left of the room, the moving ceiling fan hanging from the center of the living room, and all the general house layout (walls, floor, etc).
 
-The included virtual character used is the one from the [MORHP3D Male](https://assetstore.unity.com/packages/3d/characters/humanoids/mcs-male-45805) package pulled directly from the Unity Assets Store. The different animations where taken from the following packages from the Unity Asset Store: The [Raw Mocap for Mecanim](https://assetstore.unity.com/packages/3d/animations/raw-mocap-data-for-mecanim-5330), the [3D-BROTHERS Action Pack](https://assetstore.unity.com/packages/3d/animations/action-pack-25794) and the [Animations for RPG Human](https://assetstore.unity.com/packages/3d/animations/free-preview-of-animations-for-rpg-human-85292) package.
+The included virtual character used is the one from the [MORHP3D Male](https://assetstore.unity.com/packages/3d/characters/humanoids/mcs-male-45805) package pulled directly from the Unity Assets Store. The different animations were taken from the following packages from the Unity Asset Store: The [Raw Mocap for Mecanim](https://assetstore.unity.com/packages/3d/animations/raw-mocap-data-for-mecanim-5330), the [3D-BROTHERS Action Pack](https://assetstore.unity.com/packages/3d/animations/action-pack-25794) and the [Animations for RPG Human](https://assetstore.unity.com/packages/3d/animations/free-preview-of-animations-for-rpg-human-85292) package.
 
    <img src="https://user-images.githubusercontent.com/5633645/35434575-6ba491d4-0266-11e8-8a86-1daa752a1b7a.png" alt="home_1" style="max-width:100%" width="1048" heigth="664">
    <img src="https://user-images.githubusercontent.com/5633645/35844812-26e62b58-0aee-11e8-8d10-4e04edef5f55.png" alt="home_1" style="max-width:100%" width="1048" heigth="664">   
@@ -79,9 +79,9 @@ In this line, the following interactions are supported so far:
 2. A useful object is the Universal Remote that can be found above the short table. After grabbing it you can point to different objects and press the touchpad button to interact with them. For example, the TV can be powered on/off, the fan can be powered on/off, and even some of the doors can be opened/closed using it. Now that's an universal remote! Check the video below this lines.
 3. Doors can be opened/closed by grabbing the handle by pulling the controller's trigger and moving the hand back or forth as you would do to open/close a real door.
 
-<a target="_blank" href="https://www.youtube.com/watch?v=jw8KjPF3hcQ"><img src="http://img.youtube.com/vi/jw8KjPF3hcQ/0.jpg" alt="Roll a Ball 3D" width="320" height="240" border="10" /></a>
+<a target="_blank" href="https://www.youtube.com/watch?v=jw8KjPF3hcQ"><img src="http://img.youtube.com/vi/jw8KjPF3hcQ/0.jpg" alt="Interaction 6DOF" width="320" height="240" border="10" /></a>
 
-_Click on the image to open video_
+_Click on the image to open video (will open in the same tab by default)_
 
 ## Interaction - Virtual characters
 
@@ -114,12 +114,12 @@ The project can be run directly from the Editor as it includes a basic mouse-bas
 
 ## 3 DOF
 
-<a target="_blank" href="https://www.youtube.com/watch?v=wGEwUGgWl5E"><img src="http://img.youtube.com/vi/wGEwUGgWl5E/0.jpg" alt="Roll a Ball 3D" width="640" height="480" border="10" /></a>
+<a target="_blank" href="https://www.youtube.com/watch?v=wGEwUGgWl5E"><img src="http://img.youtube.com/vi/wGEwUGgWl5E/0.jpg" alt="3DOF" width="640" height="480" border="10"/></a>
 
-_Click on the image to open video_
+_Click on the image to open video (will open in the same tab by default)_
 
 ## 6 DOF
 
-<a target="_blank" href="https://www.youtube.com/watch?v=DY-ipFc8uSQ"><img src="http://img.youtube.com/vi/DY-ipFc8uSQ/0.jpg" alt="Roll a Ball 3D" width="640" height="480" border="10" /></a>
+<a target="_blank" href="https://www.youtube.com/watch?v=DY-ipFc8uSQ"><img src="http://img.youtube.com/vi/DY-ipFc8uSQ/0.jpg" alt="6DOF" width="640" height="480" border="10"/></a>
 
-_Click on the image to open video_
+_Click on the image to open video (will open in the same tab by default)_
