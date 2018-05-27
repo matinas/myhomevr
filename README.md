@@ -93,7 +93,7 @@ During all the interaction with the character he will be making some human-like 
 
 To answer to questions you can nod (YES) or shake (NO) your head (i.e.: quickly move your head up and down, or left and right, respectively). Check the following demo video to get an idea of how the interaction is carried out as well as the multiple social expressions done by the virtual character. The mic input isn't heard in the video, just the virtual character's answers, but the overall interaction can be clearly seen anyway.
 
-<a target="_blank" href="https://www.youtube.com/watch?v=wGEwUGgWl5E"><img src="http://img.youtube.com/vi/wGEwUGgWl5E/0.jpg" alt="3DOF" width="640" height="480" border="10"/></a>
+<a target="_blank" href="https://www.youtube.com/watch?v=Xpjyk5zPuFM"><img src="http://img.youtube.com/vi/Xpjyk5zPuFM/0.jpg" alt="3DOF" width="320" height="240" border="10"/></a>
 
 _Click on the image to open video (will open in the same tab by default)_
 
