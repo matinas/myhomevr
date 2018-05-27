@@ -32,6 +32,18 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
+  - m_Name: LookAtTime
+    m_Type: 1
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 9100000}
+  - m_Name: LookAwayTime
+    m_Type: 1
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Face
@@ -78,7 +90,7 @@ AnimatorController:
     m_BlendingMode: 0
     m_SyncedLayerIndex: 1
     m_DefaultWeight: 0
-    m_IKPass: 0
+    m_IKPass: 1
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
   - serializedVersion: 5
@@ -118,7 +130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 0}
-  audioToPlay: {fileID: 8300000, guid: 4f53a0740e7e69e4e9a27982a281858e, type: 3}
+  audioToPlay: {fileID: 8300000, guid: 93aac8e0f84bafc4492b47ab620877a7, type: 3}
 --- !u!114 &114494533016947030
 MonoBehaviour:
   m_ObjectHideFlags: 1
