@@ -13,35 +13,83 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: SilentTime
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Nod
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Shake
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
-    m_Name: Base Layer
+    m_Name: Face
+    m_StateMachine: {fileID: 1107470416966331978}
+    m_Mask: {fileID: 0}
+    m_Motions:
+    - serializedVersion: 2
+      m_State: {fileID: 1102393881820057820}
+      m_Motion: {fileID: 7400000, guid: 4b6488bf8cc21c240adb14f98aca5497, type: 2}
+    - serializedVersion: 2
+      m_State: {fileID: 1102385717302927656}
+      m_Motion: {fileID: 7400000, guid: e4f5edb6ee2981043b8150ff0caaf125, type: 2}
+    - serializedVersion: 2
+      m_State: {fileID: 1102140087858453912}
+      m_Motion: {fileID: 7400000, guid: 08ab18f3a163cdb46941afc8521f57ba, type: 2}
+    - serializedVersion: 2
+      m_State: {fileID: 1102476059798234112}
+      m_Motion: {fileID: 7400000, guid: aa8b6444e16051c4ea6cd19f2f2cf319, type: 2}
+    - serializedVersion: 2
+      m_State: {fileID: 1102388144273362394}
+      m_Motion: {fileID: 7400000, guid: 76807583938c87242b3578e5e17d8dd3, type: 2}
+    - serializedVersion: 2
+      m_State: {fileID: 1102766173067528996}
+      m_Motion: {fileID: 7400000, guid: e5226aebde07cb546a96fbd76e2d0ba6, type: 2}
+    - serializedVersion: 2
+      m_State: {fileID: 1102339453803161806}
+      m_Motion: {fileID: 7400000, guid: 67112bce550523d4f84f045bf9edc6c6, type: 2}
+    - serializedVersion: 2
+      m_State: {fileID: 1102141380924051810}
+      m_Motion: {fileID: 7400000, guid: 6c0b26db5e03edf49b0390a43fbfd7c6, type: 2}
+    - serializedVersion: 2
+      m_State: {fileID: 1102946749197603464}
+      m_Motion: {fileID: 7400000, guid: aa8b6444e16051c4ea6cd19f2f2cf319, type: 2}
+    - serializedVersion: 2
+      m_State: {fileID: 1102495841475039774}
+      m_Motion: {fileID: 7400000, guid: 76807583938c87242b3578e5e17d8dd3, type: 2}
+    - serializedVersion: 2
+      m_State: {fileID: 1102747556500925278}
+      m_Motion: {fileID: 7400000, guid: c00b0c8e54811f242834c08c2382fdc9, type: 2}
+    - serializedVersion: 2
+      m_State: {fileID: 1102064367490194300}
+      m_Motion: {fileID: 7400000, guid: bb1db588189be1b4885891138fc0502b, type: 2}
+    m_Behaviours: []
+    m_BlendingMode: 0
+    m_SyncedLayerIndex: 1
+    m_DefaultWeight: 0
+    m_IKPass: 0
+    m_SyncedLayerAffectsTiming: 0
+    m_Controller: {fileID: 9100000}
+  - serializedVersion: 5
+    m_Name: Body
     m_StateMachine: {fileID: 1107704437626280764}
     m_Mask: {fileID: 0}
     m_Motions: []
     m_Behaviours: []
     m_BlendingMode: 0
     m_SyncedLayerIndex: -1
-    m_DefaultWeight: 0
+    m_DefaultWeight: 1
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
@@ -841,13 +889,31 @@ AnimatorState:
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
+--- !u!1107 &1107470416966331978
+AnimatorStateMachine:
+  serializedVersion: 5
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Face
+  m_ChildStates: []
+  m_ChildStateMachines: []
+  m_AnyStateTransitions: []
+  m_EntryTransitions: []
+  m_StateMachineTransitions: {}
+  m_StateMachineBehaviours: []
+  m_AnyStatePosition: {x: 50, y: 20, z: 0}
+  m_EntryPosition: {x: 50, y: 120, z: 0}
+  m_ExitPosition: {x: 800, y: 120, z: 0}
+  m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
+  m_DefaultState: {fileID: 0}
 --- !u!1107 &1107704437626280764
 AnimatorStateMachine:
   serializedVersion: 5
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Base Layer
+  m_Name: Body
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 1102393881820057820}
